@@ -1,29 +1,28 @@
 <p align="center">
-  <img src="docs/assets/phrio-social-preview.png" alt="Phrio — speak once, say it again more clearly" width="960">
+  <img src="docs/assets/phrio-social-preview.png" alt="Phrio——说一遍，找到一个焦点，再说得更清楚" width="960">
 </p>
 
 <h1 align="center">Phrio</h1>
 
 <p align="center">
-  <strong>Speak once. Find one actionable focus. Say it again, more clearly.</strong>
+  <strong>说一遍。找到一个可行动的焦点。再说一遍，更清楚。</strong>
 </p>
 
 <p align="center">
-  A local-first desktop app for deliberate spoken-expression practice in Chinese.
-  Phrio anchors feedback to your actual words, then compares the first and second
-  attempts on one frozen criterion—without inventing a total score.
+  一款本地优先的中文口头表达刻意练习桌面应用。Phrio 把反馈锚定到你真正说过的句子，
+  再用同一个冻结标准比较前后两次表达——不虚构一个看似精确的表达总分。
 </p>
 
 <p align="center">
-  <a href="README.zh-CN.md">中文说明</a> ·
-  <a href="#30-second-demo">30-second demo</a> ·
-  <a href="#quick-start">Quick start</a> ·
-  <a href="CONTRIBUTING.md">Contributing</a> ·
-  <a href="SECURITY.md">Security</a>
+  <a href="README.en.md">English</a> ·
+  <a href="#30-秒受控演示">30 秒演示</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="CONTRIBUTING.md">参与贡献</a> ·
+  <a href="SECURITY.md">安全说明</a>
 </p>
 
 <p align="center">
-  <sub>macOS Apple Silicon · local-first · no account · MIT</sub>
+  <sub>macOS Apple Silicon · 本地优先 · 无需账号 · MIT</sub>
 </p>
 
 <p align="center">
@@ -33,90 +32,86 @@
 </p>
 
 > [!IMPORTANT]
-> Phrio is currently a macOS Apple Silicon Internal Alpha. The source, automated
-> gates, and controlled fixtures are available, but a Developer ID–signed and
-> notarized public binary has not been released yet.
+> Phrio 目前是面向 macOS Apple Silicon 的 **Internal Alpha**。源码、自动化门禁和
+> 受控 Fixture 已公开，但尚未发布经过 Developer ID 签名与 Apple 公证的公共安装包。
 
-## Practice the sentence, not a speaking score
+## 练的是这句话，不是表达总分
 
-Most speaking tools either return a generic score or rewrite the answer for you.
-Phrio treats clearer expression as a short editorial rehearsal:
+许多表达工具要么给出一个笼统分数，要么直接替你改写答案。Phrio 把“表达得更清楚”
+设计成一次短小、可复查的编辑排练：
 
-| Evidence, not vibes | One focus, not a report | A fair retry, not a vanity score |
+| 看证据，不凭感觉 | 只练一个焦点 | 同口径复讲，不制造胜负 |
 | --- | --- | --- |
-| Feedback points back to the finalized words that triggered it. | You choose one actionable criterion—or stop after diagnosis. | The second attempt is compared only on that frozen criterion. |
+| 反馈指回触发判断的真实 final 原句。 | 你选择一个可行动标准，也可以在诊断后直接结束。 | 第二次表达只比较已经冻结的那个标准。 |
 
-That creates one compact loop the learner still controls:
+整个训练闭环仍由练习者掌控：
 
-1. **Speak** using a real microphone and local streaming ASR.
-2. **Inspect evidence** linked to the exact finalized sentence.
-3. **Choose one focus** and complete a short Drill—or stop after diagnosis.
-4. **Retry the same task** and compare only the frozen criterion.
-5. **Save or share a privacy-safe result card** generated locally.
+1. **开口表达**：使用真实麦克风和本地流式 ASR。
+2. **查看证据**：定位到实际说出的 final 句子。
+3. **选择一个焦点**：完成短 Drill，或在诊断后结束。
+4. **同题复讲**：只按冻结标准进行前后比较。
+5. **保存或分享**：在本机生成隐私安全的结果卡。
 
-No account or cloud service is required for the local practice loop. Optional
-OpenAI features remain off until the user configures a key and grants the
-matching purpose-specific consent.
+本地训练闭环不要求账号，也不依赖云服务。可选 OpenAI 功能默认关闭；只有用户配置
+Key，并针对具体用途完成独立同意后，才允许发送相应的 final 文本。
 
 <p align="center">
-  <img src="docs/assets/phrio-hero.png" alt="The real packaged Phrio controlled tour showing a same-criterion comparison" width="960">
+  <img src="docs/assets/phrio-hero.png" alt="Phrio 真实打包版受控演示中的同口径复讲比较" width="960">
 </p>
 
 <p align="center">
-  <sub>Real packaged UI, controlled tour data. No microphone, model download, record creation, or cloud call.</sub>
+  <sub>真实打包 UI，受控演示数据；未请求麦克风、未安装模型、未创建记录、未调用云端。</sub>
 </p>
 
-## 30-second demo
+## 30 秒受控演示
 
-The built-in controlled demo shows the complete method without requesting
-microphone permission, downloading the local ASR model, creating a practice
-record, or calling a cloud provider.
+应用内置完整方法演示，不需要麦克风权限，不下载本地 ASR 模型，不创建练习记录，
+也不调用任何云端服务。
 
 <p align="center">
-  <img src="docs/assets/phrio-demo.gif" alt="Controlled Phrio demo: evidence, one focus, and same-criterion comparison" width="840">
+  <img src="docs/assets/phrio-demo.gif" alt="Phrio 受控演示：原句证据、唯一焦点与同口径复讲比较" width="840">
 </p>
 
-The demo is permanently labelled as controlled data. It is a product tour, not
-evidence of real microphone, model, or cloud-provider quality.
+演示数据始终带有 Fixture 标识。它用于展示产品方法，不冒充真实麦克风、本地模型
+质量或云端模型效果证据。
 
-## What is implemented
+## 已实现能力
 
-- Local microphone capture, device selection, input-health feedback, playback,
-  retry, and deletion.
-- Local Sherpa-ONNX streaming ASR with partial/final separation, recovery paths,
-  frozen timestamps, and a resumable model installer.
-- Evidence-linked local diagnosis, one optional focus, short Drill, retry, and
-  same-criterion comparison.
-- Dual record views: current diagnosis and the frozen live-evidence ledger.
-- Local PNG/SVG/Markdown result cards in 16:10, 1:1, and 9:16 formats. Evidence
-  quotes are opt-in; complete transcripts are never added to result cards.
-- Light/dark/system themes, constrained palettes, text scaling, reduced motion,
-  keyboard focus recovery, and compact 1024 px layouts.
-- Optional OpenAI live hints, deep diagnosis, and semantic comparison behind
-  separate consent boundaries.
-- Repository-owned community task packs validated at build time; no downloaded
-  code or runtime plug-in execution.
+- 本地麦克风采集、设备选择、输入健康提示、回放、重试和删除。
+- Sherpa-ONNX 本地流式 ASR，区分 partial / final，支持恢复路径、冻结时间码和
+  可断点续传的模型安装器。
+- 锚定原句证据的本地诊断、一个可选焦点、短 Drill、同题复讲与同口径比较。
+- 双记录视图：当前诊断结果，以及录制时冻结的实时证据账本。
+- 在本机生成 16:10、1:1、9:16 的 PNG / SVG / Markdown 结果卡。证据原句默认
+  不展示，完整逐字稿永不进入结果卡。
+- 浅色 / 深色 / 跟随系统主题、受约束配色、文字缩放、减少动效、键盘焦点恢复，
+  以及 1024 px 紧凑布局。
+- 可选 OpenAI 实时提示、深度诊断和语义比较；三种用途保持独立同意边界。
+- 仓库内社区 Task Pack 在构建期校验，不下载或执行远程插件代码。
 
-## Privacy model
+需要查看完整状态、Fast / Deep Lane、诊断日志和降级边界时，请阅读
+[中文 Internal Alpha 技术说明](docs/internal-alpha.zh-CN.md)。
 
-| Data | Default location | Cloud boundary |
+## 隐私模型
+
+| 数据 | 默认位置 | 云端边界 |
 | --- | --- | --- |
-| Audio and PCM | Local device | Never included in AI payloads |
-| Partial transcript | In-memory live state | Never persisted or uploaded |
-| Final transcript and practice records | Local SQLite | Sent only for an explicitly enabled and approved AI purpose |
-| Share cards | Generated locally on user action | No public link is created |
-| Diagnostics | Local rotating logs | Exported only to a user-selected file |
+| 音频与 PCM | 本机 | 永不进入 AI payload |
+| Partial 逐字稿 | 实时内存 | 不持久化，不上传 |
+| Final 逐字稿与练习记录 | 本机 SQLite | 仅在对应 AI 用途明确开启并批准后发送 |
+| 分享卡 | 用户操作后在本机生成 | 不创建公共链接 |
+| 诊断日志 | 本机轮换日志 | 仅在用户选择路径后导出 |
 
-The app has no telemetry or account requirement. See the detailed
-[Chinese Internal Alpha documentation](README.zh-CN.md) and
-[security policy](SECURITY.md) for the full boundary.
+应用没有遥测，也不要求账号。完整边界见
+[中文 Internal Alpha 技术说明](docs/internal-alpha.zh-CN.md)和
+[安全政策](SECURITY.md)。
 
-## Quick start
+## 快速开始
 
-Requirements:
+环境要求：
 
-- macOS on Apple Silicon
-- Node.js `24.18.0` or newer
+- Apple Silicon Mac
+- Node.js `24.18.0` 或更高版本
 - pnpm `10.33.2`
 
 ```bash
@@ -124,116 +119,90 @@ pnpm install --frozen-lockfile
 pnpm start
 ```
 
-For a no-permission product tour, choose **30 秒受控演示** on the first screen.
-For real practice, install the approximately 226.2 MiB pinned local model when
-prompted, then grant microphone access when recording begins.
+如果只想无权限体验产品，在首屏选择 **30 秒受控演示**。真实练习需要先安装约
+226.2 MiB 的冻结本地模型，并在开始录音时授权麦克风。
 
-Run the production gate:
+运行完整生产门禁：
 
 ```bash
 pnpm verify
 ```
 
-Run the real Electron visual and controlled product tours:
+运行真实 Electron 视觉与受控产品巡检：
 
 ```bash
 pnpm verify:electron-visual
 pnpm verify:electron-product-tour
 ```
 
-## Download and distribution
+## 下载与分发
 
-The [source repository](https://github.com/Dewensong/phrio-speech-coach) is
-public. There is no public binary release yet. The current CI produces
-short-lived, explicitly ad-hoc Internal Alpha evidence bundles. They are not
-notarized public installers.
+[源码仓库](https://github.com/Dewensong/phrio-speech-coach)已经公开，但目前没有
+公共二进制 Release。CI 生成的是短期、明确标注为 ad-hoc 的 Internal Alpha
+证据包，不是经过 Apple 公证的公开安装器。
 
-The repository now contains:
+仓库已经具备：
 
-- a real Phrio icon and macOS DMG maker;
-- environment-gated Developer ID signing and notarization;
-- a manual release-candidate workflow that refuses to run without Apple
-  credentials;
-- separate ad-hoc and public-distribution verification boundaries.
+- 正式 Phrio 图标和 macOS DMG maker；
+- 由环境门控制的 Developer ID 签名与公证流程；
+- 缺少 Apple 凭据时主动拒绝运行的手动候选发布 workflow；
+- ad-hoc 内测与公共分发相互独立的验证边界。
 
-The maintainer must still provide an Apple Developer identity, notarization
-credentials, and explicit publication approval. See
-[Public macOS distribution](docs/release/public-macos-distribution.md).
-The separate [GitHub source-release checklist](docs/release/github-open-source-readiness.md)
-defines repository privacy, protection, CI, and clean-clone gates; completing
-that checklist does not publish a binary.
+正式发布仍需要维护者提供 Apple Developer 身份、公证凭据并再次明确批准。参见
+[macOS 公共分发说明](docs/release/public-macos-distribution.md)和
+[GitHub 源码发布检查](docs/release/github-open-source-readiness.md)。
+完成源码检查不等于发布二进制。
 
-## Community task packs
+## 社区 Task Pack
 
-Phrio currently accepts task-only community packs for the existing Clear
-Expression, Decision & Alignment, and Argument & Rebuttal modes. Packs are
-reviewed JSON files compiled into the app and licensed under MIT.
+Phrio 目前接受现有“清晰表达”“决策与对齐”“观点与反驳”模式下的纯任务贡献。
+Pack 是经过 Review 的 JSON，在构建期编译进应用，并采用 MIT 许可。
 
-Start with [`task-packs/contributions/product-review.json`](task-packs/contributions/product-review.json)
-and read the [task-pack contribution guide](task-packs/README.md).
+可以从
+[`task-packs/contributions/product-review.json`](task-packs/contributions/product-review.json)
+开始，并阅读 [Task Pack 贡献指南](task-packs/README.md)。
 
-## Repository map
+## 仓库结构
 
 ```text
 src/
-├── frontend/      # Pages, components, hooks, renderer services
-├── backend/       # IPC controllers, services, SQLite/file repositories
-├── preload/       # Narrow typed desktop bridge
-└── shared/        # Schemas, state machines, frozen protocols
+├── frontend/      # 页面、组件、Hook 与 Renderer Service
+├── backend/       # IPC Controller、Service、SQLite / 文件 Repository
+├── preload/       # 窄类型桌面桥
+└── shared/        # Schema、状态机与冻结协议
 
-task-packs/        # Build-time validated community practice tasks
-docs/              # ADRs, acceptance evidence, release and brand guidance
-build/             # Entitlements and deterministic brand assets
+task-packs/        # 构建期校验的社区练习任务
+docs/              # ADR、验收证据、发布和品牌说明
+build/             # 权限与确定性品牌资产
 ```
 
-## Evidence levels
+## 三类证据
 
-Phrio intentionally separates:
+Phrio 始终区分：
 
-- **Automated evidence** — unit, integration, packaging, security, and layout
-  gates.
-- **Controlled fixture evidence** — real Electron/IPC/SQLite flows using clearly
-  labelled synthetic data.
-- **Real-device evidence** — real microphone, local model, interruption,
-  performance, and explicitly authorized cloud calls.
+- **自动化证据**：单元、集成、打包、安全和布局门禁。
+- **受控 Fixture 证据**：真实 Electron / IPC / SQLite 流程，使用明确标注的
+  合成数据。
+- **真实设备证据**：真实麦克风、本地模型、设备中断、性能以及明确授权的云端调用。
 
-One category never substitutes for another. Current acceptance evidence lives
-under [`docs/acceptance`](docs/acceptance). The current-tree secret, license,
-workflow-permission, `main`, CI, and remote-boundary result is documented in
-[`2026-07-24 GitHub source publication`](docs/acceptance/2026-07-24-github-source-publication.md).
-The preceding local-only audit remains in
-[`2026-07-24 GitHub open-source preflight`](docs/acceptance/2026-07-24-github-open-source-preflight.md).
-The final full-product theme,
-90–125% scale, keyboard, controlled-fixture, real-device-boundary, and source-truth
-matrix is documented in
-[`2026-07-24 Editorial rehearsal final acceptance`](docs/acceptance/2026-07-24-editorial-rehearsal-final-acceptance.md);
-the local archive, device
-ledgers, controlled specimen, result proof, and repository assets are documented in
-[`2026-07-24 Records and propagation proof`](docs/acceptance/2026-07-24-editorial-rehearsal-records-propagation.md);
-the transcript proof,
-diagnosis, Drill, retry docket, and paired folio gates are documented in
-[`2026-07-24 Editorial rehearsal training loop`](docs/acceptance/2026-07-24-editorial-rehearsal-training-loop.md);
-the focused live workspace, evidence view, and capture details remain in
-[`2026-07-24 Editorial rehearsal live workspace`](docs/acceptance/2026-07-24-editorial-rehearsal-live-workspace.md);
-the preceding visual foundation remains in
-[`2026-07-24 Editorial rehearsal foundation`](docs/acceptance/2026-07-24-editorial-rehearsal-foundation.md).
-The preceding propagation, packaging, real-microphone stop closure, and
-release-readiness evidence remains in
-[`2026-07-23 Open-source propagation and release readiness`](docs/acceptance/2026-07-23-open-source-propagation-release-readiness.md).
+三类证据不能相互替代。当前证据位于
+[`docs/acceptance`](docs/acceptance)。源码历史隐私、许可证、workflow 权限、
+远端 CI 与 clean-clone 结果见
+[2026-07-24 GitHub 源码公开验收](docs/acceptance/2026-07-24-github-source-publication.md)；
+完整主题、缩放、键盘、受控 Fixture 和真实设备边界见
+[2026-07-24 全产品终验](docs/acceptance/2026-07-24-editorial-rehearsal-final-acceptance.md)；
+此前的真实麦克风停止收束和传播边界见
+[2026-07-23 验收](docs/acceptance/2026-07-23-open-source-propagation-release-readiness.md)。
 
-## Contributing
+## 参与贡献
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a change. Good first
-contributions include practice tasks, accessibility improvements, deterministic
-UI tests, documentation, and platform investigations that preserve the privacy
-and evidence model.
+提交变更前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。适合开始的贡献包括练习任务、
+可访问性改进、确定性 UI 测试、文档，以及不破坏隐私与证据模型的平台调查。
 
-Never commit real recordings, transcripts, customer material, API keys,
-notarization credentials, or generated model weights.
+请勿提交真实录音、逐字稿、客户材料、API Key、公证凭据或生成后的模型权重。
 
-## License
+## 许可证
 
-Phrio source code and repository-authored assets are available under the
-[MIT License](LICENSE). Third-party dependencies and model files retain their
-own licenses; see [third-party notices](THIRD_PARTY_NOTICES.md). The Sherpa
-model weights are downloaded separately and are not included in this repository.
+Phrio 自有源码与仓库资产使用 [MIT License](LICENSE)。第三方依赖和模型文件保留
+各自许可，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。Sherpa 模型
+权重单独下载，不包含在本仓库中。

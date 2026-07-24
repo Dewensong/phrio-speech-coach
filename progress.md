@@ -2,6 +2,10 @@
 
 ## 2026-07-24
 
+- 将 GitHub 默认首页从英文切换为中文：`README.md` 采用与传播主视觉一致的精简
+  中文产品叙事，完整英文版迁移为 `README.en.md`，原长篇中文实现与验收说明保留
+  为 `docs/internal-alpha.zh-CN.md`。中英首页双向互链，开源门同时要求两种语言
+  首页与中文技术说明存在；未删除功能说明或改变 Internal Alpha / 云端同意边界。
 - 经 Dewens 明确授权执行历史隐私清理与 GitHub 建仓。先将内部最终 tip
   `8c11dbb` 的全部 12 个引用写入仓库外 `0600` bundle，并通过
   `git bundle verify`；再用完全相同的 Git tree 建立无父公共根 `14dbf71`，

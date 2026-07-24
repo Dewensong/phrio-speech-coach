@@ -8,7 +8,8 @@ const repositoryRoot = process.cwd();
 
 const requiredFiles = [
   'README.md',
-  'README.zh-CN.md',
+  'README.en.md',
+  'docs/internal-alpha.zh-CN.md',
   'LICENSE',
   'CONTRIBUTING.md',
   'CODE_OF_CONDUCT.md',

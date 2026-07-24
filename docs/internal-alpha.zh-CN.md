@@ -1,9 +1,10 @@
-# Phrio
+# Phrio Internal Alpha 技术说明
 
 Phrio 是一款本地优先的中文口头表达刻意练习桌面应用。用户完成初讲后会先得到可保存的诊断结果，再自行选择结束、直接复讲，或进入“一个训练焦点 → 短 Drill → 同题复讲”；复讲完成后也可选择结束或查看同口径前后比较。
 
-[English README](README.md) · [30 秒受控演示](#30-秒受控演示与分享) ·
-[参与贡献](CONTRIBUTING.md) · [安全说明](SECURITY.md)
+[中文首页](../README.md) · [English README](../README.en.md) ·
+[30 秒受控演示](#30-秒受控演示与分享) ·
+[参与贡献](../CONTRIBUTING.md) · [安全说明](../SECURITY.md)
 
 ## 当前状态
 
@@ -18,10 +19,10 @@ Phrio 是一款本地优先的中文口头表达刻意练习桌面应用。用�
 源码已公开在
 [`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)。
 历史隐私清理、远程 CI、干净克隆、仓库保护和证据分层见
-[2026-07-24 GitHub 源码公开验收](docs/acceptance/2026-07-24-github-source-publication.md)；
+[2026-07-24 GitHub 源码公开验收](acceptance/2026-07-24-github-source-publication.md)；
 此前的本地 Secret、许可证与 workflow 权限审计仍保留在
-[2026-07-24 开源预检](docs/acceptance/2026-07-24-github-open-source-preflight.md)。
-旧的 2026-07-17 产品就绪度审计准确描述了当时的缺口，但其中“云端 AI 未接线”“Deep 依赖页面 draft”“16 个 bridge 方法”“125% 只做 CSS 代理”等结论已被本轮实现取代。完整功能矩阵见 [2026-07-18 Production Closure](docs/acceptance/2026-07-18-production-closure.md)，柔性结果流、实时转写低延迟轨与持久化门见 [2026-07-21 验收](docs/acceptance/2026-07-21-flexible-results-streaming-latency.md)，最近练习的命名、模式标签与记录管理边界见 [最近练习管理验收](docs/acceptance/2026-07-21-recent-practice-management.md)，结果层级与冻结实时证据双视图见 [练习结果双视图验收](docs/acceptance/2026-07-21-record-result-evidence-views.md)，传播层、开源仓面与公共候选发布边界见 [2026-07-23 验收](docs/acceptance/2026-07-23-open-source-propagation-release-readiness.md)，当前记录、设置、受控 Demo、结果卡和仓库传播素材见 [2026-07-24 本地档案与传播校样验收](docs/acceptance/2026-07-24-editorial-rehearsal-records-propagation.md)，逐字稿、诊断、Drill、复讲完成与双页比较见 [2026-07-24 训练闭环验收](docs/acceptance/2026-07-24-editorial-rehearsal-training-loop.md)，默认专注、显式证据、采集详情和异常上浮见 [2026-07-24 实时工作区验收](docs/acceptance/2026-07-24-editorial-rehearsal-live-workspace.md)，视觉基础与功能保全门见 [2026-07-24 基础验收](docs/acceptance/2026-07-24-editorial-rehearsal-foundation.md)。
+[2026-07-24 开源预检](acceptance/2026-07-24-github-open-source-preflight.md)。
+旧的 2026-07-17 产品就绪度审计准确描述了当时的缺口，但其中“云端 AI 未接线”“Deep 依赖页面 draft”“16 个 bridge 方法”“125% 只做 CSS 代理”等结论已被本轮实现取代。完整功能矩阵见 [2026-07-18 Production Closure](acceptance/2026-07-18-production-closure.md)，柔性结果流、实时转写低延迟轨与持久化门见 [2026-07-21 验收](acceptance/2026-07-21-flexible-results-streaming-latency.md)，最近练习的命名、模式标签与记录管理边界见 [最近练习管理验收](acceptance/2026-07-21-recent-practice-management.md)，结果层级与冻结实时证据双视图见 [练习结果双视图验收](acceptance/2026-07-21-record-result-evidence-views.md)，传播层、开源仓面与公共候选发布边界见 [2026-07-23 验收](acceptance/2026-07-23-open-source-propagation-release-readiness.md)，当前记录、设置、受控 Demo、结果卡和仓库传播素材见 [2026-07-24 本地档案与传播校样验收](acceptance/2026-07-24-editorial-rehearsal-records-propagation.md)，逐字稿、诊断、Drill、复讲完成与双页比较见 [2026-07-24 训练闭环验收](acceptance/2026-07-24-editorial-rehearsal-training-loop.md)，默认专注、显式证据、采集详情和异常上浮见 [2026-07-24 实时工作区验收](acceptance/2026-07-24-editorial-rehearsal-live-workspace.md)，视觉基础与功能保全门见 [2026-07-24 基础验收](acceptance/2026-07-24-editorial-rehearsal-foundation.md)。
 
 ## 30 秒受控演示与分享
 
@@ -31,9 +32,9 @@ Phrio 是一款本地优先的中文口头表达刻意练习桌面应用。用�
   并进入纯净投屏模式。证据原句默认关闭，完整逐字稿永不进入结果卡。
 - Phrio 不创建公开链接、不自动上传分享卡，也不借传播层新增总分或胜负判断。
 - README Hero、动图和 GitHub social preview 均由最新打包版的受控 Demo
-  生成，证据边界与再生方式见 [品牌与传播素材](docs/brand/README.md)。
+  生成，证据边界与再生方式见 [品牌与传播素材](brand/README.md)。
 - 仓库现以 MIT 开放自有源与资产，并提供只允许现有模式任务的
-  [社区 Task Pack](task-packs/README.md) 入口；不执行远程插件代码。
+  [社区 Task Pack](../task-packs/README.md) 入口；不执行远程插件代码。
 
 ## 已实现闭环
 
@@ -60,7 +61,7 @@ Phrio 是一款本地优先的中文口头表达刻意练习桌面应用。用�
 - 本地复盘、Drill 与本地比较不等待云端；AI、网络或同意失败不会阻断本地闭环。
 - 每条完成记录默认展示按“一句话结论 → 判断证据 → 唯一焦点 → 下一步”组织的诊断结果，并可切换到与录制时相同的左右共享行“实时证据”。初讲/复讲分别回放自己的冻结 final、时间码、O 编号、问题记录与提示 lifecycle；原始 final 不被后续纠正覆盖，纠正后的诊断与中性历史态仍可同时回查。partial 继续只属于实时临时态，不在历史页伪造或持久化。
 
-完整架构、数据流、状态与降级分支见 [Fast/Deep ADR](docs/adr/0002-fast-deep-lanes.md)。
+完整架构、数据流、状态与降级分支见 [Fast/Deep ADR](adr/0002-fast-deep-lanes.md)。
 
 ## 数据、同意与安全
 
@@ -108,15 +109,15 @@ pnpm verify
 ```
 
 最小 macOS Apple Silicon CI 已固化为
-[`ci.yml`](.github/workflows/ci.yml)：PR 与 `main` push 自动运行
+[`ci.yml`](../.github/workflows/ci.yml)：PR 与 `main` push 自动运行
 `pnpm verify`，push/手动运行额外生成带提交身份、SHA-256 和证据分层声明的
 14 天内部 Alpha ZIP。该 ZIP 仍是 ad-hoc 签名，不是已公证的分享包；CI 不读取
 OpenAI Key、不发送转录文本，也不替代真实麦克风/模型/目标 Mac 验收。当前仓库
 已经以受保护的公开 `main` 为源码真源；GitHub 保护、历史隐私与发布边界见
-[GitHub 源码发布检查](docs/release/github-open-source-readiness.md) 和
-[Internal Alpha CI 与实现真源](docs/release/internal-alpha-ci.md)。
+[GitHub 源码发布检查](release/github-open-source-readiness.md) 和
+[Internal Alpha CI 与实现真源](release/internal-alpha-ci.md)。
 
-自备且已获授权的 16-bit PCM WAV 可用 `pnpm benchmark:asr` 做完全离线的中英双语流式基准；仓库示例默认全部 skip，不包含真实录音，也不会伪造指标。manifest、指标口径与隐私边界见 [本地 ASR 离线基准](docs/local-asr-benchmark.md)。
+自备且已获授权的 16-bit PCM WAV 可用 `pnpm benchmark:asr` 做完全离线的中英双语流式基准；仓库示例默认全部 skip，不包含真实录音，也不会伪造指标。manifest、指标口径与隐私边界见 [本地 ASR 离线基准](local-asr-benchmark.md)。
 
 2026-07-24 当前共享树结果：59 个测试文件通过、1 个跳过；596 项测试通过、1 项跳过；Electron 系统网络 / 安装期防休眠探针、macOS 打包、18 个签名目标、40 方法 packaged bridge 与 Sherpa `1.13.4` smoke 全通过。上一阶段的 `pnpm make` 还实际生成带品牌安装背景的 DMG 与 ZIP；两者仍为 ad-hoc Internal Alpha 制品，不是 Developer ID / 已公证分享包。
 
@@ -127,7 +128,7 @@ pnpm verify:electron-visual
 pnpm verify:electron-product-tour
 ```
 
-视觉脚本覆盖 1440×960 / 1024×960、100% / 125%、标准 / 证据全屏、语义滚动锚点、Esc 回焦、reduced motion、单一证据 scroller、共享行对齐和横向 overflow，当前 85/85、9 张截图；产品巡检还用直接注入的受控音频、partial/final、证据与尾句事件，经真实 Session/IPC/SQLite 跑通编号 Fixture Demo、默认专注、采集详情、证据切换、快照、编辑稿纸式逐字稿、四级诊断卡、自由复讲、单动作焦点 Drill、冻结复讲票据、双页 paired-1、本地档案与 Session 卷宗、设备账册、`RESULT PROOF` 分享卡、纯净展示、终态保存、首句命名、重命名、置顶/取消置顶、删除、历史诊断与冻结实时证据双视图，并完成浅色/深色代表页、90% / 100% / 112.5% / 125%、键盘 Enter / 方向键 / Home / End / Esc 与 1024 主操作门，当前 149/149、49 张截图。两条真实 Electron 轨的生产 console 均为 0 error / 0 warning，产品与 QA 外部 HTTP(S) 请求均为 0；开发 QA 轨只有 Electron 自身的开发期 CSP 提示。该受控轨证明跨页面持久化闭环，不证明生产 recorder、Sherpa、规则标注/尾句编排或云服务；这些代码边界分别由单元/集成测试覆盖，真实环境仍按清单手工验收。最终证据矩阵、三选一建议与主真源方案见 [2026-07-24 全产品终验](docs/acceptance/2026-07-24-editorial-rehearsal-final-acceptance.md)；分阶段界面证据见 [本地档案与传播校样验收](docs/acceptance/2026-07-24-editorial-rehearsal-records-propagation.md)、[训练闭环验收](docs/acceptance/2026-07-24-editorial-rehearsal-training-loop.md)、[实时工作区验收](docs/acceptance/2026-07-24-editorial-rehearsal-live-workspace.md) 与 [视觉基础验收](docs/acceptance/2026-07-24-editorial-rehearsal-foundation.md)，传播和真实麦克风证据见 [2026-07-23 验收](docs/acceptance/2026-07-23-open-source-propagation-release-readiness.md)，完整闭环证据见 [柔性结果与低延迟验收](docs/acceptance/2026-07-21-flexible-results-streaming-latency.md)、[最近练习管理验收](docs/acceptance/2026-07-21-recent-practice-management.md) 与 [练习结果双视图验收](docs/acceptance/2026-07-21-record-result-evidence-views.md)，日志设计见 [诊断日志验收](docs/acceptance/2026-07-18-diagnostic-logging.md)，真实录音、模型安装、同音频恢复与实时 AI 设置验收见 [2026-07-20 验收](docs/acceptance/2026-07-20-real-capture-transcription-recovery.md)。
+视觉脚本覆盖 1440×960 / 1024×960、100% / 125%、标准 / 证据全屏、语义滚动锚点、Esc 回焦、reduced motion、单一证据 scroller、共享行对齐和横向 overflow，当前 85/85、9 张截图；产品巡检还用直接注入的受控音频、partial/final、证据与尾句事件，经真实 Session/IPC/SQLite 跑通编号 Fixture Demo、默认专注、采集详情、证据切换、快照、编辑稿纸式逐字稿、四级诊断卡、自由复讲、单动作焦点 Drill、冻结复讲票据、双页 paired-1、本地档案与 Session 卷宗、设备账册、`RESULT PROOF` 分享卡、纯净展示、终态保存、首句命名、重命名、置顶/取消置顶、删除、历史诊断与冻结实时证据双视图，并完成浅色/深色代表页、90% / 100% / 112.5% / 125%、键盘 Enter / 方向键 / Home / End / Esc 与 1024 主操作门，当前 149/149、49 张截图。两条真实 Electron 轨的生产 console 均为 0 error / 0 warning，产品与 QA 外部 HTTP(S) 请求均为 0；开发 QA 轨只有 Electron 自身的开发期 CSP 提示。该受控轨证明跨页面持久化闭环，不证明生产 recorder、Sherpa、规则标注/尾句编排或云服务；这些代码边界分别由单元/集成测试覆盖，真实环境仍按清单手工验收。最终证据矩阵、三选一建议与主真源方案见 [2026-07-24 全产品终验](acceptance/2026-07-24-editorial-rehearsal-final-acceptance.md)；分阶段界面证据见 [本地档案与传播校样验收](acceptance/2026-07-24-editorial-rehearsal-records-propagation.md)、[训练闭环验收](acceptance/2026-07-24-editorial-rehearsal-training-loop.md)、[实时工作区验收](acceptance/2026-07-24-editorial-rehearsal-live-workspace.md) 与 [视觉基础验收](acceptance/2026-07-24-editorial-rehearsal-foundation.md)，传播和真实麦克风证据见 [2026-07-23 验收](acceptance/2026-07-23-open-source-propagation-release-readiness.md)，完整闭环证据见 [柔性结果与低延迟验收](acceptance/2026-07-21-flexible-results-streaming-latency.md)、[最近练习管理验收](acceptance/2026-07-21-recent-practice-management.md) 与 [练习结果双视图验收](acceptance/2026-07-21-record-result-evidence-views.md)，日志设计见 [诊断日志验收](acceptance/2026-07-18-diagnostic-logging.md)，真实录音、模型安装、同音频恢复与实时 AI 设置验收见 [2026-07-20 验收](acceptance/2026-07-20-real-capture-transcription-recovery.md)。
 
 ### 真实体验时收集日志
 
@@ -136,7 +137,7 @@ pnpm verify:electron-product-tour
 3. 点击“导出诊断包”，在系统保存面板中选择位置，把生成的 JSON 文件与截图一并用于后续排查。导出是只读副本，不会清空本机日志，也不会自动发送到任何服务。
 4. 问题确认后可点击“清除诊断日志”；如果要清空全部练习，则使用“清除训练数据”，它会同时清除应用管理的日志，但保留用户已导出的文件。
 
-日志是排查线索，不是性能达标证明。真实设备/服务手工验收步骤和应观察的事件见 [诊断日志验收](docs/acceptance/2026-07-18-diagnostic-logging.md)。
+日志是排查线索，不是性能达标证明。真实设备/服务手工验收步骤和应观察的事件见 [诊断日志验收](acceptance/2026-07-18-diagnostic-logging.md)。
 
 ## 目录
 
