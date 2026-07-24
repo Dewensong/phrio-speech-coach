@@ -26,6 +26,12 @@
   <sub>macOS Apple Silicon · local-first · no account · MIT</sub>
 </p>
 
+<p align="center">
+  <a href="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml">
+    <img src="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml/badge.svg?branch=main" alt="Phrio CI">
+  </a>
+</p>
+
 > [!IMPORTANT]
 > Phrio is currently a macOS Apple Silicon Internal Alpha. The source, automated
 > gates, and controlled fixtures are available, but a Developer ID–signed and
@@ -137,9 +143,10 @@ pnpm verify:electron-product-tour
 
 ## Download and distribution
 
-There is no public binary release yet. The current CI produces short-lived,
-explicitly ad-hoc Internal Alpha evidence bundles. They are not notarized public
-installers.
+The [source repository](https://github.com/Dewensong/phrio-speech-coach) is
+public. There is no public binary release yet. The current CI produces
+short-lived, explicitly ad-hoc Internal Alpha evidence bundles. They are not
+notarized public installers.
 
 The repository now contains:
 
@@ -193,6 +200,8 @@ Phrio intentionally separates:
 One category never substitutes for another. Current acceptance evidence lives
 under [`docs/acceptance`](docs/acceptance). The current-tree secret, license,
 workflow-permission, `main`, CI, and remote-boundary result is documented in
+[`2026-07-24 GitHub source publication`](docs/acceptance/2026-07-24-github-source-publication.md).
+The preceding local-only audit remains in
 [`2026-07-24 GitHub open-source preflight`](docs/acceptance/2026-07-24-github-open-source-preflight.md).
 The final full-product theme,
 90–125% scale, keyboard, controlled-fixture, real-device-boundary, and source-truth

@@ -2,10 +2,14 @@
 
 ## 实现仓 Source of Truth
 
-- 当前主真源：本仓 `main`。
-- `main` 建立基点：`cd4e33bf0939314fa85f46b500c48d1c705688ca`。
-- 验收回退引用：`codex/record-result-evidence-views`，在建立 `main` 时与上述
-  基点完全同点，继续保留为历史引用。
+- 当前主真源：公开仓
+  [`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)
+  的受保护 `main`。
+- 公共历史根：`14dbf71b468c2b7ec3b156b34bae519df27881fa`；无父提交，使用
+  GitHub noreply 作者地址。
+- 内部最终 tip：`8c11dbb93e522ac3f33e4aa62d18e996700cdbae`；由本机
+  `codex/internal-pre-public-main` 和仓库外 `0600` 离线 bundle 保留，不推送。
+- 下列早期提交 SHA 是离线内部历史的来源坐标，不保证能在公开 GitHub 仓解析。
 - 2026-07-23 候选父提交：`9b944af08878adf28ef2f7c907aa1b7c427df498`
 - 传播体验实现提交：`a8046c4`（受控 Demo、结果卡、社区 Task Pack）。
 - 开源仓面与发布实现提交：`393a594`（品牌、DMG、许可证、候选发布门）。
@@ -21,19 +25,19 @@
   `RESULT PROOF`、三比例导出、README Hero / GIF / social preview 与采集门）。
 - 全产品主题、90–125%、键盘与主真源终验提交：`0f1f922`（149/149 Electron
   product tour、49 图、无新增 P0/P1；未创建 main、remote 或公共包）。
-- 2026-07-24 全产品验收、决策与真源记录先随验收分支 tip 收口；随后经维护者
-  单独授权，当前产品 Worktree 在同一提交建立并切换到 `main`。没有合并提交，
-  当前实现不依赖未提交代码。
+- 2026-07-24 全产品验收、决策与真源记录先随内部历史收口；随后经维护者
+  单独授权，以完全相同的 Git tree 建立隐私清洁公共根。公共历史没有合入、
+  重放或推送旧分支，当前实现不依赖未提交代码。
 - 历史根 Worktree 停在祖先分支 `codex/phase-1-foundation`，不得作为当前实现
   或发布输入；另一个 fast-deep Worktree 同样只作历史检查点。
-- 当前产品 Git 仓仍没有 remote。在维护者明确选择远程仓以前，不配置 remote、
-  不推送、不发布。
-- 真实麦克风复验和公共发布边界继续独立记录；建立 `main` 不会把 ad-hoc 制品
-  变成 Developer ID 公共发布包。
+- GitHub 只接收隐私清洁公共历史；旧 Worktree、本地内部分支和离线 bundle
+  不作为远程发布输入。
+- 真实麦克风复验和公共二进制发布边界继续独立记录；源码公开不会把 ad-hoc
+  Artifact 变成 Developer ID 公共发布包。
 - CI、证据分层与安全确立远程主真源的步骤见
   [Internal Alpha CI 与实现真源](release/internal-alpha-ci.md)。
-- 当前树开源安全面与未完成远程门见
-  [2026-07-24 GitHub 开源预检](acceptance/2026-07-24-github-open-source-preflight.md)。
+- 当前树、历史隐私、远程 CI、clean clone 和仓库保护见
+  [2026-07-24 GitHub 源码公开验收](acceptance/2026-07-24-github-source-publication.md)。
 
 ## 功能 Source of Truth
 

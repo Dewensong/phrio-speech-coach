@@ -15,7 +15,11 @@ Phrio 是一款本地优先的中文口头表达刻意练习桌面应用。用�
 - 可诊断性：主进程已接入本地结构化诊断日志，覆盖应用、录音、VAD、ASR、Fast/Deep、AI、IPC、持久化和窗口异常；设置页可查看状态、打开目录、导出诊断包和清除日志
 - 发布边界：这不是公网上线声明。真实麦克风/设备中断、真实本地模型质量、真实 OpenAI 凭据调用以及目标 Mac 性能仍需手工验收；不宣称未经测量的延迟、准确率或训练效果
 
-最新 GitHub 当前树 Secret、许可证、workflow 权限、`main` 与 remote 边界见
+源码已公开在
+[`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)。
+历史隐私清理、远程 CI、干净克隆、仓库保护和证据分层见
+[2026-07-24 GitHub 源码公开验收](docs/acceptance/2026-07-24-github-source-publication.md)；
+此前的本地 Secret、许可证与 workflow 权限审计仍保留在
 [2026-07-24 开源预检](docs/acceptance/2026-07-24-github-open-source-preflight.md)。
 旧的 2026-07-17 产品就绪度审计准确描述了当时的缺口，但其中“云端 AI 未接线”“Deep 依赖页面 draft”“16 个 bridge 方法”“125% 只做 CSS 代理”等结论已被本轮实现取代。完整功能矩阵见 [2026-07-18 Production Closure](docs/acceptance/2026-07-18-production-closure.md)，柔性结果流、实时转写低延迟轨与持久化门见 [2026-07-21 验收](docs/acceptance/2026-07-21-flexible-results-streaming-latency.md)，最近练习的命名、模式标签与记录管理边界见 [最近练习管理验收](docs/acceptance/2026-07-21-recent-practice-management.md)，结果层级与冻结实时证据双视图见 [练习结果双视图验收](docs/acceptance/2026-07-21-record-result-evidence-views.md)，传播层、开源仓面与公共候选发布边界见 [2026-07-23 验收](docs/acceptance/2026-07-23-open-source-propagation-release-readiness.md)，当前记录、设置、受控 Demo、结果卡和仓库传播素材见 [2026-07-24 本地档案与传播校样验收](docs/acceptance/2026-07-24-editorial-rehearsal-records-propagation.md)，逐字稿、诊断、Drill、复讲完成与双页比较见 [2026-07-24 训练闭环验收](docs/acceptance/2026-07-24-editorial-rehearsal-training-loop.md)，默认专注、显式证据、采集详情和异常上浮见 [2026-07-24 实时工作区验收](docs/acceptance/2026-07-24-editorial-rehearsal-live-workspace.md)，视觉基础与功能保全门见 [2026-07-24 基础验收](docs/acceptance/2026-07-24-editorial-rehearsal-foundation.md)。
 
@@ -108,8 +112,8 @@ pnpm verify
 `pnpm verify`，push/手动运行额外生成带提交身份、SHA-256 和证据分层声明的
 14 天内部 Alpha ZIP。该 ZIP 仍是 ad-hoc 签名，不是已公证的分享包；CI 不读取
 OpenAI Key、不发送转录文本，也不替代真实麦克风/模型/目标 Mac 验收。当前仓库
-已经以 `main` 为本地主真源，但仍没有 remote；启用边界、GitHub 保护与历史隐私
-选择见 [GitHub 源码发布检查](docs/release/github-open-source-readiness.md) 和
+已经以受保护的公开 `main` 为源码真源；GitHub 保护、历史隐私与发布边界见
+[GitHub 源码发布检查](docs/release/github-open-source-readiness.md) 和
 [Internal Alpha CI 与实现真源](docs/release/internal-alpha-ci.md)。
 
 自备且已获授权的 16-bit PCM WAV 可用 `pnpm benchmark:asr` 做完全离线的中英双语流式基准；仓库示例默认全部 skip，不包含真实录音，也不会伪造指标。manifest、指标口径与隐私边界见 [本地 ASR 离线基准](docs/local-asr-benchmark.md)。

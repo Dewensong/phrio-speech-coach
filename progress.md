@@ -2,6 +2,34 @@
 
 ## 2026-07-24
 
+- 经 Dewens 明确授权执行历史隐私清理与 GitHub 建仓。先将内部最终 tip
+  `8c11dbb` 的全部 12 个引用写入仓库外 `0600` bundle，并通过
+  `git bundle verify`；再用完全相同的 Git tree 建立无父公共根 `14dbf71`，
+  作者切换为 GitHub noreply。临时裸仓 main-only 推送模拟确认只有 1 个引用、
+  1 个提交、0 个不可达旧对象；旧 Worktree 和旧分支没有删除。
+- 创建空白私有仓 `Dewensong/phrio-speech-coach`，只推隐私清洁 `main`。
+  GitHub-hosted Apple Silicon 首次 CI run `30066089135` 在 1m48s 内通过锁定
+  安装、263 文件开源门、59 文件 / 596 项测试、系统网络与防休眠、macOS 包、
+  18 签名目标、40 方法 bridge 和 Sherpa `1.13.4` smoke；随后从 GitHub 新空
+  目录 clone，确认无父公共根和开源门通过。
+- 只在远程 CI 与 clean clone 通过后将源码仓切为 Public。启用只读 Actions、
+  Dependabot security updates、Secret scanning、Push protection、Private
+  Vulnerability Reporting；`main` 要求 PR、分支最新、对话解决、
+  `verify-macos-arm64`、线性历史并禁止 force-push / 删除；公共候选环境限制到
+  受保护分支并要求维护者审核。没有创建 tag / Release 或公开二进制。
+- 开仓后 GitHub 首次报告 11 个开发/打包依赖告警；官方 npm 全量审计同步发现
+  14 个当时有效告警。未 dismiss：以 `pnpm.overrides` 将 `tar` 固定到
+  `7.5.19`、`tmp` 到 `0.2.7`、`fast-uri` 到 `3.1.4`。全量与生产依赖审计均
+  降为 0；完整 `pnpm verify` 证明 tar 跨主版本覆盖仍能完成原生重建、打包、
+  18 签名目标和所有 smoke。
+- GitHub 首页将 1280×640 纸墨套印 social preview 前置，把
+  “Practice the sentence, not a speaking score”确立为传播主张，同时保留真实
+  打包受控 Demo 截图和证据标签。名称预检发现另有瑞典室内设计应用使用 Phrio，
+  因此仓库 slug 采用更明确的 `phrio-speech-coach`；Phrio 继续是待正式品牌
+  清关的工作名，不把网页检索冒充商标法律结论。
+- 本轮没有改产品功能，没有新增受控 Fixture 或真实设备通过声明，没有请求
+  麦克风、提供 OpenAI Key、发送转录文本、使用 Developer ID 或执行公证。
+  源码可公开审阅，普通用户公共 Mac 分享包继续保持独立发布门。
 - 启动 Phrio 全产品“编辑校样 × 表达排练 × 纸墨套印”体验改造，先建立
   `docs/plans/2026-07-24-editorial-rehearsal-redesign.md`，逐项冻结现有自由练习、
   题库/收藏、模型/麦克风、partial/final、停止恢复、证据、Deep 三分支、Drill、

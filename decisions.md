@@ -1,5 +1,35 @@
 # 关键决策
 
+## 2026-07-24：公共源码使用清洁历史，完整内部历史只作离线保留
+
+- 授权：Dewens 明确要求执行历史隐私清理、创建 GitHub 仓并优化传播首页；这次
+  授权覆盖源码公开，不覆盖 tag、Release、公共安装包、Developer ID / 公证或
+  OpenAI 文本传输。
+- 历史策略：不逐条重写旧提交，也不公开旧提交邮箱和工作站路径。先生成并验证
+  `0600` 完整 bundle，再从最终已审源码 tree 建立无父公共根。内部最终 tip
+  继续由 `codex/internal-pre-public-main` 和离线 bundle 双重保留；GitHub 只接收
+  清洁公共 `main`。
+- 远程真源：公开仓
+  [`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)
+  的受保护 `main` 成为后续公开贡献真源。旧 Worktree、旧分支和离线 bundle
+  不再是公开构建或发布输入，也不得使用 `--all` 推送。
+- 晋级顺序：空白私有仓 → 只推公共 `main` → 真实 GitHub CI → clean clone →
+  Public → 安全设置和分支保护。任何一步失败都不能提前公开；公共二进制仍走
+  独立发布门。
+- 保护策略：Actions 默认只读；`main` 要求 PR、分支最新、对话解决、精确
+  `verify-macos-arm64`、线性历史，禁止 force-push / 删除；合并仅使用 squash。
+  单维护者阶段不把“必须由另一个人批准源码 PR”伪装成已有治理能力，候选发布
+  Environment 则保留独立维护者审核。
+- 依赖安全：Dependabot 告警不因处于 devDependency 就 dismiss。上游 Forge
+  仍通过 Rebuild 3.x 锁入有公告的 `tar 6.2.1` 时，使用仓库级最小 override
+  统一提升到已修复版本，并要求官方全量 audit、完整 `pnpm verify` 和 macOS
+  原生重建/打包共同通过；待上游解除旧依赖后再移除 override。
+- 传播策略：首页前置真实受控 Demo 社交主视觉，以“练句子，而不是练总分”解释
+  产品差异；任何截图都保留 Fixture 标签，不生成假 UI 冒充设备证据。
+- 名称边界：公开检索发现另有瑞典室内设计应用使用 Phrio。仓库 slug 使用更明确
+  的 `phrio-speech-coach`，Phrio 仍是工作名；正式分发前必须另做目标市场名称、
+  商标、域名和应用商店清关。
+
 ## 2026-07-24：本地 `main` 成为产品主真源，远程与发布继续独立授权
 
 - 决策：维护者在最终验收后单独批准以

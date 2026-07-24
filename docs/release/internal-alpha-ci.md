@@ -31,10 +31,11 @@ Phrio 已具备一条最小 macOS Apple Silicon CI，以及一条凭据门控、
 - 真源门：非 `main` 的手动 dispatch 会立即失败
 - 制品：只保留 14 天的 workflow artifact
 
-仓库当前没有 remote，所以上述两个工作流在本地都只是已验证配置；只有 Dewens
-明确选择远程仓并推送后才会真正运行。公共候选轨还需要真实 Apple Developer
-证书与公证凭据。本地主真源已经是 `main`；本轮没有配置 remote、创建 GitHub
-Release 或发布制品。
+源码仓现已公开在
+[`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)。
+最小 CI 已在真实 GitHub-hosted Apple Silicon runner 对公共历史根成功运行；
+公共候选轨仍需要真实 Apple Developer 证书与公证凭据。本轮没有创建 tag /
+GitHub Release，也没有公开任何 workflow Artifact 或安装包。
 
 ## 公共候选不是自动发布
 
@@ -50,7 +51,8 @@ DMG/ZIP”，不解决是否应该公开。它缺少写仓权限，也不接受�
 - DMG 使用仓库内确定性品牌背景，并在真实 Finder 中确认只有
   `Phrio.app` 与 `Applications` 两个安装对象；
 - 当前内部包继续被公共候选 gate 拒绝，不能冒充 Developer ID；
-- 公共工作流与 gate 的正向路径仍等待真实 Apple 凭据和 GitHub runner 证据。
+- 公共工作流与 gate 的正向路径仍等待真实 Apple 凭据；普通最小 CI 的
+  GitHub-hosted runner 路径已经通过。
 
 ## 三类证据必须分开
 
@@ -96,34 +98,31 @@ JSON 冻结提交、运行链接、工具链、Bundle 身份、签名口径、�
 
 ## 实现仓主真源
 
-2026-07-24 的本地收口结果：
+2026-07-24 的源码公开收口结果：
 
-- 当前主真源：`main`
-- 建立基点：`cd4e33bf0939314fa85f46b500c48d1c705688ca`
-- 验收回退引用：`codex/record-result-evidence-views`，建立 `main` 时与基点同点
+- 当前主真源：GitHub 受保护的公开 `main`
+- 公共历史根：`14dbf71b468c2b7ec3b156b34bae519df27881fa`
+- 内部最终 tip：`8c11dbb93e522ac3f33e4aa62d18e996700cdbae`
+- 内部回退引用：`codex/internal-pre-public-main`，只保留在本机和离线 bundle
 - 旧根目录分支：`codex/phase-1-foundation`，提交
   `5f33f6912402a7ed48c99aa5cec97bfb6c0e5c1e`
-- 拓扑关系：旧根目录提交是 `main` 建立基点的祖先，不是当前实现
-- remote：无
+- 拓扑关系：旧历史不再是公共 `main` 的祖先，没有推送到 GitHub
+- remote：`https://github.com/Dewensong/phrio-speech-coach.git`
 
-本机目录名不是 Git 真源身份。remote 建立前以本仓 `main` 为实现真源；不要从
-旧根目录重新拣选、复制或制作发布包。
+本机目录名不是 Git 真源身份。后续贡献以 GitHub 受保护的 `main` 为公开实现
+真源；不要从旧根目录或本地内部历史分支重新拣选、复制或制作发布包。
 
-## 安全确立远程主真源
+## 已完成的远程主真源步骤
 
-以下步骤是后续启用清单，不在本轮自动执行：
-
-1. 记录精确 `main` tip，确认工作树干净，并可选生成离线 `git bundle`。
-2. 决定公开历史策略：完整历史会保留维护者提交邮箱和旧工作站路径；若不接受，
-   必须在配置 remote 前单独设计隐私清理，不能临时改写已推送历史。
-3. 选择一个空的私有远程仓；不要使用带初始化提交的远程覆盖本地历史。
-4. 经明确授权后配置 remote，只推送 `main`，并把它设为默认分支。
-5. 等待 `verify-macos-arm64` 在远程真实通过，核对证据 JSON 中的 commit 与
-   目标提交完全一致。
-6. 为 `main` 启用禁止 force-push / 删除、要求 PR、要求对话解决、要求分支最新
-   和 `verify-macos-arm64` 的保护规则。
-7. 从零 clone 远程并重跑开源门与关键启动检查；旧 Worktree 继续作为历史检查点，
-   不承担构建和发布入口。
+1. 精确记录内部 tip 和公开 tree，并生成、验证 `0600` 离线完整历史 bundle。
+2. 从同一 tree 建立无父公共根，作者使用 GitHub noreply 地址。
+3. 先向临时裸仓模拟只推 `main`，确认 1 个引用、1 个提交、0 个不可达旧对象。
+4. 创建空白私有远程，只推公共 `main`，等待 `verify-macos-arm64` 真实通过。
+5. 从 GitHub 克隆到新的空目录，确认无父根和开源门通过。
+6. 公开源码，并启用禁止 force-push / 删除、要求 PR、对话解决、分支最新和
+   `verify-macos-arm64` 的保护规则。
+7. 旧 Worktree、旧分支和离线 bundle 继续作为本机内部历史，不承担公开构建和
+   发布入口，也不推送到 GitHub。
 
 完整 GitHub 设置、隐私和 clean-clone 清单见
 [GitHub 源码发布检查](github-open-source-readiness.md)。

@@ -6,6 +6,15 @@
   "main": ".vite/build/main.js",
   "private": true,
   "license": "MIT",
+  "author": "Song Dewen",
+  "homepage": "https://github.com/Dewensong/phrio-speech-coach#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dewensong/phrio-speech-coach.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dewensong/phrio-speech-coach/issues"
+  },
   "packageManager": "pnpm@10.33.2",
   "engines": {
     "node": ">=24.18.0"
@@ -16,7 +25,12 @@
       "esbuild",
       "fs-xattr",
       "macos-alias"
-    ]
+    ],
+    "overrides": {
+      "fast-uri": "3.1.4",
+      "tar": "7.5.19",
+      "tmp": "0.2.7"
+    }
   },
   "scripts": {
     "start": "electron-forge start",

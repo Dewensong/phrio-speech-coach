@@ -1,5 +1,10 @@
 # 2026-07-24 GitHub 开源预检
 
+> [!NOTE]
+> 本文冻结远程建立前的预检状态。随后完成的历史隐私清理、GitHub CI、
+> clean clone、公开可见性和仓库保护见
+> [GitHub 源码公开验收](2026-07-24-github-source-publication.md)。
+
 ## 结论
 
 Phrio 当前 `main` 的**源码树已经达到创建空白私有 GitHub 仓并验证远程 CI 的
