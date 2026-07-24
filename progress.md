@@ -8,10 +8,15 @@
   作者切换为 GitHub noreply。临时裸仓 main-only 推送模拟确认只有 1 个引用、
   1 个提交、0 个不可达旧对象；旧 Worktree 和旧分支没有删除。
 - 创建空白私有仓 `Dewensong/phrio-speech-coach`，只推隐私清洁 `main`。
-  GitHub-hosted Apple Silicon 首次 CI run `30066089135` 在 1m48s 内通过锁定
-  安装、263 文件开源门、59 文件 / 596 项测试、系统网络与防休眠、macOS 包、
+  重建后 GitHub-hosted Apple Silicon CI run `30067263075` 在 1m56s 内通过
+  锁定安装、264 文件开源门、59 文件 / 596 项测试、系统网络与防休眠、macOS 包、
   18 签名目标、40 方法 bridge 和 Sherpa `1.13.4` smoke；随后从 GitHub 新空
-  目录 clone，确认无父公共根和开源门通过。
+  目录 clone，确认 2 笔提交均为 noreply、无父公共根和开源门通过。
+- 第一次 staging 公开后真实发现 GitHub Web squash 没有沿用本地 noreply，
+  而是使用了账号资料中的联系邮箱。仓库随即退回 Private 并改名保留为私有审计
+  归档；在原 slug 创建新空仓，用同一根和同一源码 tree 重建 noreply 历史，
+  重新通过 CI / clean clone 后才恢复公开。具体邮箱不进入文档；未来 Web merge
+  前必须人工开启 GitHub 邮箱隐私与“阻止暴露邮箱的命令行 push”。
 - 只在远程 CI 与 clean clone 通过后将源码仓切为 Public。启用只读 Actions、
   Dependabot security updates、Secret scanning、Push protection、Private
   Vulnerability Reporting；`main` 要求 PR、分支最新、对话解决、

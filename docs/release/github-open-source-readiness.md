@@ -78,9 +78,10 @@ fixture-sentinel log check, and the complete production gate while reusing
 reviewed local dependency caches and explicitly selecting the official Electron
 Release source. Two isolated empty-HOME cold-cache attempts did not complete
 the Electron download inside the bounded local window and were stopped. They
-remain failed attempts rather than passes. The subsequent GitHub-hosted Apple
-Silicon run `30066089135` completed the locked install and full `pnpm verify`,
-closing the remote CI path for the public root.
+remain failed attempts rather than passes. After the GitHub Web merge identity
+recovery described below, the recreated repository's GitHub-hosted Apple
+Silicon run `30067263075` completed the locked install and full `pnpm verify`
+on the final clean-history candidate.
 
 ## Completed remote sequence
 
@@ -93,6 +94,13 @@ closing the remote CI path for the public root.
    `pnpm verify:open-source`.
 7. Changed visibility to public only after the remote CI and clean clone passed.
 8. Enabled security controls and `main` protection before accepting changes.
+
+The first public staging was returned to private when GitHub Web squash used a
+profile contact email instead of the repository's noreply identity. That
+repository remains a private audit archive; the original slug was recreated
+empty, received only locally generated noreply commits, and repeated CI and
+clean-clone verification before final publication. GitHub account email privacy
+must be manually confirmed before any future Web merge.
 
 The exact evidence, bundle digest, run ID, and evidence-level separation are in
 [2026-07-24 GitHub source publication](../acceptance/2026-07-24-github-source-publication.md).

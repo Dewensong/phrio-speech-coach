@@ -20,6 +20,10 @@
   `verify-macos-arm64`、线性历史，禁止 force-push / 删除；合并仅使用 squash。
   单维护者阶段不把“必须由另一个人批准源码 PR”伪装成已有治理能力，候选发布
   Environment 则保留独立维护者审核。
+- Web 合并身份门：GitHub Web squash 曾真实使用账号资料联系邮箱，而非本地
+  noreply。旧 staging 已私有归档，原 slug 以本地生成的 noreply 历史重建。
+  维护者在账号 Emails 设置中开启邮箱隐私和“阻止暴露邮箱的命令行 push”之前，
+  不合并任何 GitHub / Dependabot PR；提交身份检查是 CI 之外的人工治理门。
 - 依赖安全：Dependabot 告警不因处于 devDependency 就 dismiss。上游 Forge
   仍通过 Rebuild 3.x 锁入有公告的 `tar 6.2.1` 时，使用仓库级最小 override
   统一提升到已修复版本，并要求官方全量 audit、完整 `pnpm verify` 和 macOS

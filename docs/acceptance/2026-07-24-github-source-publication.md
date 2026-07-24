@@ -36,10 +36,28 @@ subject: Initial public release: Phrio 0.1.0-alpha.0
 - bundle 已通过 `git bundle verify`，包含 12 个当时有效引用；SHA-256：
   `08ff7e441fcbfe5716bfd57899beed70318c903a19e06a2dee184add32b3ad06`。
 - 临时裸仓推送模拟只得到 `refs/heads/main`、1 个提交、0 个不可达对象。
-- GitHub clean clone 只得到公共 `main` 和同一公共根；根提交没有父提交，
-  `pnpm verify:open-source` 通过。
+- 最终 GitHub clean clone 只得到清洁 `main` 的 2 个提交；根提交没有父提交，
+  两笔作者地址均为 GitHub noreply，`pnpm verify:open-source` 通过。
 
 离线 bundle 属于敏感内部备份，不应上传到 GitHub、网盘公开链接或 CI Artifact。
+
+### GitHub Web 合并身份回归与恢复
+
+第一次 private staging 通过 CI 和 clean clone 后曾短暂切为 Public。随后一次
+GitHub Web squash 没有沿用仓库本地的 noreply 配置，而是把维护者账号资料中的
+联系邮箱写进新提交。发现后立即执行以下恢复：
+
+1. 仓库退回 Private，停止传播和外观操作；
+2. 原仓改名并保留为 Private 审计归档，不再作为产品远程真源；
+3. 在本地从同一根、同一源码 tree 重新生成 noreply 提交；
+4. 在原 `phrio-speech-coach` slug 创建新的空白 private 仓，只推清洁 `main`；
+5. 对新仓重跑 GitHub CI、clean clone 和提交身份审计；
+6. 只有新仓全部通过后才重新公开并恢复保护设置。
+
+最终公开仓不包含第一次 staging 的 PR refs 或 GitHub 生成提交。未来使用 GitHub
+Web merge 之前，维护者必须先在 GitHub 账号 Emails 设置中开启邮箱隐私，并启用
+阻止暴露邮箱的命令行 push；在该账号级设置被人工确认前，不合并 Dependabot 或
+其他 PR。文档不记录或复述本次暴露的具体邮箱值。
 
 ## GitHub 仓库边界
 
@@ -75,18 +93,18 @@ Phrio 仍只能视为产品工作名，本轮预检不是商标法律意见，�
 
 ## 自动化证据
 
-GitHub-hosted Apple Silicon runner 对公共根的首次真实 push 运行：
+GitHub-hosted Apple Silicon runner 对重建后清洁 `main` 的真实 push 运行：
 
 ```text
 workflow: Phrio CI
-run: 30066089135
+run: 30067263075
 job: verify-macos-arm64
 result: success
-duration: 1m48s
-head: 14dbf71b468c2b7ec3b156b34bae519df27881fa
+duration: 1m56s
+head: 33ad407ce4f4c2c8608d427cc848c0723c4f8dc6
 
 locked dependency install: pass
-open-source readiness: 263 tracked files, pass
+open-source readiness: 264 tracked files, pass
 test files: 59 passed, 1 skipped
 tests: 596 passed, 1 skipped
 Electron system network probe: pass
@@ -100,7 +118,7 @@ Sherpa native dependency: 1.13.4, loaded
 
 CI 生成一个 14 天自动过期的 ad-hoc Internal Alpha 证据 Artifact。上传 Artifact
 摘要为
-`sha256:bf10a6e8b94f72ddc7fc203627fcfb1af0a7ef905b594e9e56974974ea67edc0`。
+`sha256:fbbf2ecffcfe678c5a0129f59a175f2f07c8b1f5e7dc0ec131a33a1444fe257c`。
 它明确标记为 automated evidence，不是 Developer ID 签名、公证或公开下载包。
 
 这次 GitHub runner 的锁定安装与完整门通过，关闭了此前本机两个空 HOME 冷缓存
