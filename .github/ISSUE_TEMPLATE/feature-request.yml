@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a focused improvement that preserves Phrio's evidence and privacy model.
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Describe the real practice task, not only the desired UI or technology.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries affected
+      options:
+        - label: Audio or microphone
+        - label: Transcript or evidence semantics
+        - label: Local persistence or deletion
+        - label: Cloud provider or consent
+        - label: Packaging or distribution
+        - label: None of the above
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

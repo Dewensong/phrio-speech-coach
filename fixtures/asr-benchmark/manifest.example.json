@@ -1,0 +1,46 @@
+{
+  "$schema": "./manifest.schema.json",
+  "schemaVersion": 1,
+  "description": "Schema-only examples. No recording or measured ASR result is committed to this repository.",
+  "defaults": {
+    "chunkMs": 64
+  },
+  "fixtures": [
+    {
+      "id": "replace-with-consented-zh-recording",
+      "audio": "audio/zh-example.wav",
+      "reference": "请把复杂的问题讲清楚，并给出下一步行动。",
+      "language": "zh",
+      "skip": true,
+      "skipReason": "No consented real recording is stored in Git; copy this manifest and replace the path before measuring."
+    },
+    {
+      "id": "replace-with-consented-en-recording",
+      "audio": "audio/en-example.wav",
+      "reference": "Explain the decision and the next action clearly.",
+      "language": "en",
+      "skip": true,
+      "skipReason": "No consented real recording is stored in Git; copy this manifest and replace the path before measuring."
+    },
+    {
+      "id": "replace-with-consented-mixed-recording",
+      "audio": "audio/mixed-example.wav",
+      "reference": "我们用 Agent workflow 完成这次复盘。",
+      "language": "mixed",
+      "keyTerms": [
+        {
+          "canonical": "Agent",
+          "aliases": [],
+          "occurrences": 1
+        },
+        {
+          "canonical": "workflow",
+          "aliases": ["work flow"],
+          "occurrences": 1
+        }
+      ],
+      "skip": true,
+      "skipReason": "No consented real recording is stored in Git; copy this manifest and replace the path before measuring."
+    }
+  ]
+}

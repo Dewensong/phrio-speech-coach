@@ -1,0 +1,73 @@
+name: Phrio CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phrio-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-macos-arm64:
+    name: verify-macos-arm64
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      CI: "1"
+      ELECTRON_MIRROR: https://github.com/electron/electron/releases/download/
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6
+        with:
+          version: 10.33.2
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24.18.0
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Confirm Apple Silicon toolchain
+        run: |
+          test "$(node -p 'process.platform')" = "darwin"
+          test "$(node -p 'process.arch')" = "arm64"
+          node --version
+          pnpm --version
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run automated production gate
+        run: pnpm verify
+
+      # Pull requests retain the gate log but do not produce a distributable-looking
+      # package. Push/manual runs keep a short-lived, explicitly ad-hoc internal
+      # artifact so a build can be traced to its source and checksum.
+      - name: Create internal Alpha evidence bundle
+        if: github.event_name != 'pull_request'
+        run: PHRIO_CI_GATE_PASSED=1 pnpm ci:evidence
+
+      - name: Upload internal Alpha evidence bundle
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: Phrio-${{ github.sha }}-macOS-arm64-ad-hoc
+          path: out/ci/*
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0

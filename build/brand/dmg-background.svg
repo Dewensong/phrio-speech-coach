@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="658" height="498" viewBox="0 0 658 498">
+  <rect width="658" height="498" fill="#f1efe5"/>
+  <rect width="12" height="498" fill="#df6749"/>
+  <path d="M508 0h150v126H508z" fill="#65a995"/>
+  <path d="M528 0h130v106H528z" fill="#173d34"/>
+  <path d="M0 414h172v84H0z" fill="#cfe5dc"/>
+  <path d="M0 438h148v60H0z" fill="#65a995"/>
+  <rect x="36" y="34" width="40" height="40" rx="12" fill="#f1efe5" stroke="#173d34" stroke-opacity=".22"/>
+  <path d="M51 67V45h8c6 0 10 4 10 9s-4 9-10 9h-3" fill="none" stroke="#65a995" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" transform="translate(1.5 1.5)"/>
+  <path d="M49 66V44h8c7 0 11 4 11 9s-4 9-11 9h-3" fill="none" stroke="#173d34" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <circle cx="68" cy="53" r="2.6" fill="#f1efe5"/>
+  <circle cx="68" cy="53" r="1.5" fill="#df6749"/>
+  <text x="88" y="63" fill="#14251f" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="25" font-weight="720">Phrio</text>
+  <text x="37" y="98" fill="#49665d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">Speak once. Say it again, more clearly.</text>
+  <text x="329" y="277" text-anchor="middle" fill="#173d34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="700" letter-spacing="2">DRAG TO INSTALL</text>
+  <path d="M282 345h73v-22l40 38-40 38v-22h-73z" fill="#65a995"/>
+  <path d="M276 337h73v-22l40 38-40 38v-22h-73z" fill="#173d34"/>
+  <circle cx="389" cy="353" r="7" fill="#df6749"/>
+  <text x="329" y="440" text-anchor="middle" fill="#49665d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Local-first · macOS Apple Silicon</text>
+  <text x="621" y="467" text-anchor="end" fill="#173d34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9" font-weight="700" letter-spacing="1.5">EDITION 01</text>
+</svg>

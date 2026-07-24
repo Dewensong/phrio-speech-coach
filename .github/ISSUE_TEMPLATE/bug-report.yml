@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible Phrio problem without sharing private audio or transcript data.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach real recordings, complete transcripts, API keys, customer data, or notarization credentials.
+  - type: input
+    id: revision
+    attributes:
+      label: Version or commit
+      placeholder: 0.1.0-alpha.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Evidence category
+      options:
+        - Real device
+        - Controlled fixture
+        - Automated test
+        - Not yet reproduced
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Use the smallest sequence and redact private content.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: macOS and hardware
+      placeholder: macOS version, chip, microphone model if relevant
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted diagnostics
+      description: A diagnostic ID or redacted excerpt only. Never paste secrets or transcript text.

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "product-review",
+  "version": "1.0.0",
+  "language": "zh-CN",
+  "license": "MIT",
+  "author": "Phrio contributors",
+  "description": "适用于产品评审、方案同步和跨职能对齐的社区练习题。",
+  "tasks": [
+    {
+      "id": "review-update",
+      "modeId": "decision-alignment",
+      "title": "在评审会上汇报方案变化",
+      "prompt": "用 90 秒说明一个方案从上一版到这一版发生了什么变化、为什么变化，以及今天需要确认什么。",
+      "description": "把变化原因、当前取舍和本次决策请求连成一条可复核说明。",
+      "durationSeconds": 90,
+      "audience": "参与评审的产品、研发和设计负责人",
+      "objective": "让听众理解关键变化并完成一个明确确认",
+      "scenario": "方案评审",
+      "background": "",
+      "sourceMaterial": "",
+      "counterArgument": "部分参与者仍倾向上一版方案。",
+      "constraints": [
+        "先说明当前版本的核心变化",
+        "只提出一个需要当场确认的问题"
+      ],
+      "successConditions": [
+        "变化与原因直接对应",
+        "当前取舍可理解",
+        "决策请求明确"
+      ],
+      "requiredFields": [
+        "change",
+        "reason",
+        "tradeoff",
+        "decision"
+      ],
+      "focusCriteria": [
+        "decision-request",
+        "tradeoff-priority"
+      ]
+    }
+  ]
+}

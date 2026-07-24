@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <clipPath id="tile-clip">
+      <rect x="92" y="84" width="840" height="856" rx="214"/>
+    </clipPath>
+    <filter id="tile-shadow" x="28" y="20" width="968" height="984" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#0a211b" flood-opacity=".24"/>
+    </filter>
+  </defs>
+
+  <rect
+    x="92"
+    y="84"
+    width="840"
+    height="856"
+    rx="214"
+    fill="#f1efe5"
+    filter="url(#tile-shadow)"
+  />
+
+  <g clip-path="url(#tile-clip)">
+    <path
+      d="M372 798V318H548C694 318 774 394 774 509C774 624 694 700 548 700H470"
+      fill="none"
+      stroke="#65a995"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="126"
+      transform="translate(18 18)"
+    />
+    <path
+      d="M352 786V306H528C674 306 754 382 754 497C754 612 674 688 528 688H450"
+      fill="none"
+      stroke="#173d34"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="108"
+    />
+
+    <circle cx="754" cy="497" r="49" fill="#f1efe5"/>
+    <circle cx="754" cy="497" r="27" fill="#df6749"/>
+
+    <path
+      d="M174 866H314"
+      stroke="#173d34"
+      stroke-linecap="round"
+      stroke-width="10"
+    />
+    <path
+      d="M174 890H266"
+      stroke="#65a995"
+      stroke-linecap="round"
+      stroke-width="10"
+    />
+  </g>
+
+  <rect
+    x="95"
+    y="87"
+    width="834"
+    height="850"
+    rx="211"
+    fill="none"
+    stroke="#173d34"
+    stroke-opacity=".2"
+    stroke-width="6"
+  />
+</svg>
