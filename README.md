@@ -1,5 +1,11 @@
 <p align="center">
-  <img src="docs/assets/phrio-social-preview.png" alt="Phrio——说一遍，找到一个焦点，再说得更清楚" width="960">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1">
+    <img src="docs/assets/phrio-launch-film-preview.gif" alt="Phrio 产品宣传片：看见原句、只练一个焦点、按同一标准再说一遍" width="840">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1"><strong>▶ 播放 30 秒有声宣传片（1080p）</strong></a>
 </p>
 
 <h1 align="center">Phrio</h1>
@@ -15,6 +21,7 @@
 
 <p align="center">
   <a href="README.en.md">English</a> ·
+  <a href="#30-秒产品宣传片">宣传片</a> ·
   <a href="#30-秒受控演示">30 秒演示</a> ·
   <a href="#快速开始">快速开始</a> ·
   <a href="CONTRIBUTING.md">参与贡献</a> ·
@@ -34,6 +41,13 @@
 > [!IMPORTANT]
 > Phrio 目前是面向 macOS Apple Silicon 的 **Internal Alpha**。源码、自动化门禁和
 > 受控 Fixture 已公开，但尚未发布经过 Developer ID 签名与 Apple 公证的公共安装包。
+
+## 30 秒产品宣传片
+
+上方静音预览会直接播放；点击画面或
+[播放链接](docs/assets/phrio-launch-film.mp4?raw=1)可观看 1080p 有声完整版本。
+公开版音乐与动作音效均由项目脚本程序合成，不使用内部参考混音。片中产品画面来自
+真实打包 UI 的受控 Fixture，展示产品方法，不冒充真实设备或训练效果证据。
 
 ## 练的是这句话，不是表达总分
 
