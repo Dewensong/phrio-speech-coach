@@ -1,5 +1,11 @@
 <p align="center">
-  <img src="docs/assets/phrio-social-preview.png" alt="Phrio — speak once, say it again more clearly" width="960">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1">
+    <img src="docs/assets/phrio-launch-film-preview.gif" alt="Phrio launch film: inspect the words, choose one focus, and retry on the same criterion" width="840">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1"><strong>▶ Play the 30-second film with sound (1080p)</strong></a>
 </p>
 
 <h1 align="center">Phrio</h1>
@@ -16,6 +22,7 @@
 
 <p align="center">
   <a href="README.md">中文</a> ·
+  <a href="#30-second-launch-film">Launch film</a> ·
   <a href="#30-second-demo">30-second demo</a> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="CONTRIBUTING.md">Contributing</a> ·
@@ -36,6 +43,15 @@
 > Phrio is currently a macOS Apple Silicon Internal Alpha. The source, automated
 > gates, and controlled fixtures are available, but a Developer ID–signed and
 > notarized public binary has not been released yet.
+
+## 30-second launch film
+
+The silent preview above plays inline. Click the image or the
+[play link](docs/assets/phrio-launch-film.mp4?raw=1) for the complete 1080p version
+with sound. The public soundtrack and action cues are synthesized by project
+scripts and do not use the internal reference mix. Product footage uses
+controlled fixtures captured from the real packaged UI; it demonstrates the
+method, not real-device or training-outcome evidence.
 
 ## Practice the sentence, not a speaking score
 
