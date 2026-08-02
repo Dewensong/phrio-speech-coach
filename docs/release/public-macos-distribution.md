@@ -1,8 +1,9 @@
 # Public macOS distribution
 
 This document defines the release boundary for a shareable Phrio macOS build.
-It does not authorize publication. Local `main` is now the product source of
-truth, but the repository still has no configured remote and no public binary
+It does not authorize publication. The protected `main` branch in
+[`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)
+is the public product source of truth, but there is still no public binary
 release.
 
 ## Two deliberately separate lanes
@@ -107,5 +108,6 @@ A maintainer may create a GitHub tag or Release only after:
 - license, third-party notices, privacy language, and release notes are reviewed;
 - publication is explicitly approved.
 
-Do not configure a remote, merge branches, create tags, or publish artifacts as
-part of the candidate workflow.
+The candidate workflow must not merge branches, create tags, create a GitHub
+Release, or publish artifacts. It only produces a short-lived candidate for the
+separate human and real-device gates above.

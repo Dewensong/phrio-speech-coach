@@ -5,6 +5,10 @@
 - 当前主真源：公开仓
   [`Dewensong/phrio-speech-coach`](https://github.com/Dewensong/phrio-speech-coach)
   的受保护 `main`。
+- 当前已核对的公共 `main`：
+  `d0eaa17076db9c8607ea864ee77a8b3d9b37bb7e`，包含中英 GitHub 首页与
+  权利边界清洁的 G4 产品宣传片；宣传片发布验收见
+  [2026-07-26 记录](acceptance/2026-07-26-github-launch-film-publication.md)。
 - 公共历史根：`14dbf71b468c2b7ec3b156b34bae519df27881fa`；无父提交，使用
   GitHub noreply 作者地址。
 - 内部最终 tip：`8c11dbb93e522ac3f33e4aa62d18e996700cdbae`；由本机
