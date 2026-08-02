@@ -1,5 +1,22 @@
 # 关键决策
 
+## 2026-08-02：公开宣传片完成后，公共二进制继续保持独立授权门
+
+- 远程真值：G4 宣传片已经通过 PR #10 和必需 CI 进入受保护公共 `main`。中英
+  README 使用同一静音预览和 1080p 有声版；公开音轨只含程序合成素材，不使用
+  内部参考混音。该结果关闭 GitHub 传播面，不改变产品发布级别。
+- 候选边界：`macos-release-candidate` Environment、只读 workflow、Developer ID
+  签名、hardened runtime、公证、stapling 和候选校验代码都已存在；环境中没有
+  Apple 发布 Secrets，本机也没有 Developer ID Application 身份，因此不能把
+  基础设施就绪描述成已拥有可分享包。
+- 授权顺序：取得和配置 Apple 凭据只授权生成短期候选，不授权 tag、GitHub
+  Release 或公开下载。候选生成后仍须在非构建目标 Mac 完成 Gatekeeper、首次
+  麦克风授权后重启连续性、真实模型质量、设备中断与性能验收；公开发布需要再次
+  明确批准。
+- 维护边界：常规 Dependabot PR 不因机器人创建或旧 CI 变绿自动合并。必须先
+  更新到当前 `main`、审查变化、运行对应门禁，并继续检查 squash 后的 noreply
+  身份；失败的 React/Vite/测试工具更新不得与签名收口混在一起。
+
 ## 2026-07-24：GitHub 默认中文，英文作为完整并列版本
 
 - 决策：公开仓的 `README.md` 默认使用中文，以匹配产品主要使用语言和第一批传播

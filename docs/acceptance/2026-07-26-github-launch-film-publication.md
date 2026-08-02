@@ -8,6 +8,8 @@ Publication branch: `codex/publish-phrio-g4-film`
 
 Pull request: [#10](https://github.com/Dewensong/phrio-speech-coach/pull/10)
 
+Published commit: `d0eaa17076db9c8607ea864ee77a8b3d9b37bb7e`
+
 ## Scope
 
 This acceptance closes only the public GitHub launch-film surface. It does not
@@ -64,11 +66,14 @@ the same 1080p play target, and equivalent product/evidence boundaries.
 - Earlier microphone/model evidence remains independently documented and is not
   presented as film-production proof.
 
-## GitHub publication gate
+## GitHub publication result
 
 - Main remains protected by required `verify-macos-arm64` status checks and PR
   review flow.
-- The film publication must merge through PR #10 after the required check
-  succeeds; it must not bypass branch protection.
+- PR #10 passed `verify-macos-arm64` and was squash-merged through branch
+  protection on 2026-07-26. The resulting public commit and its GitHub
+  committer identity both use noreply addresses.
+- The Chinese and English README, preview GIF, poster, and MP4 are present on
+  public `main`; the raw GIF and MP4 endpoints returned HTTP 200 after merge.
 - Publishing these README assets does not create a GitHub Release, tag, public
   installer, or Apple publication approval.

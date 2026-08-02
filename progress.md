@@ -1,5 +1,23 @@
 # 推进记录
 
+## 2026-08-02
+
+- 复核宣传片发布后的远程真值：PR #10 已在 `verify-macos-arm64` 通过后 squash
+  合并，公共 `main` 为 `d0eaa17076db9c8607ea864ee77a8b3d9b37bb7e`；中英
+  README、6.24 MB 静音预览 GIF、8.49 MB 1080p 有声 MP4 和海报均在远程存在，
+  两个原始媒体端点返回 HTTP 200。提交作者与 GitHub committer 均为 noreply。
+- 核对公共 macOS 候选轨：`macos-release-candidate` Environment 已限制到受保护
+  `main` 并要求维护者审核，但 6 项 Apple 发布 Secrets 尚未配置；本机钥匙串只
+  有 Development 身份，没有 `Developer ID Application`。因此当前不能生成、
+  公证或发布普通用户可分享的安装包，也没有触发候选 workflow。
+- GitHub 当前 open Dependabot security alerts 为 0；公开 `main` 最近一次 push
+  CI 通过。仍有多个常规依赖升级 PR，其中部分门禁失败，未在没有定向复现和审查
+  的情况下合并。
+- 修正文档中已经过期的“没有 remote”和宣传片“等待合并”表述。产品事实、证据
+  分层和 Internal Alpha 级别不变；下一道唯一发布门仍是维护者取得并安全配置
+  Developer ID 与 App Store Connect 公证凭据，然后只生成候选包供目标 Mac
+  验收，不自动创建 tag、Release 或公开下载。
+
 ## 2026-07-26
 
 - Dewens 明确终止当前产品仓真实麦克风复验，要求把宣传片公开到 GitHub；没有上传仍含未核实参考完整混音的 G3 v04，而是回到 Product Motion Studio 完成 G4。
