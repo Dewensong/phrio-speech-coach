@@ -2,6 +2,7 @@ import {
   ArrowRight,
   ChevronDown,
   Clock3,
+  Lightbulb,
   Mic2,
   Play,
   RotateCcw,
@@ -31,6 +32,27 @@ interface HomePageProps {
   onTryDemo?: () => void;
   canResume: boolean;
 }
+
+const FREE_PRACTICE_STARTERS = [
+  {
+    label: '解释一个复杂概念',
+    topic: '向不熟悉背景的人解释：最近遇到的一个复杂问题，真正难在哪里？',
+    audience: '一位不了解背景但愿意听我说明的人',
+    goal: '先说核心结论，再用一个例子把难点讲明白',
+  },
+  {
+    label: '推动一次决定',
+    topic: '说明一个现在需要做出的决定：你建议怎么选，为什么？',
+    audience: '需要共同做出决定的参与者',
+    goal: '先给建议，再说明依据、取舍和下一步',
+  },
+  {
+    label: '复盘一次失误',
+    topic: '复盘一件没有达到预期的事：发生了什么，你学到了什么？',
+    audience: '一位关心事实和下一步行动的同伴',
+    goal: '讲清事实、原因和下次会改变的一个动作',
+  },
+] as const;
 
 export function HomePage({
   selectedMode,
@@ -102,6 +124,22 @@ export function HomePage({
               value={freeTopic}
             />
           </label>
+          <div className="free-practice-starters" aria-label="场景灵感">
+            <span><Lightbulb aria-hidden="true" size={14} />没有题目？</span>
+            {FREE_PRACTICE_STARTERS.map((starter) => (
+              <button
+                key={starter.label}
+                onClick={() => {
+                  setFreeTopic(starter.topic);
+                  setFreeAudience(starter.audience);
+                  setFreeGoal(starter.goal);
+                }}
+                type="button"
+              >
+                {starter.label}
+              </button>
+            ))}
+          </div>
           <div className="free-practice-command">
             <details className="free-practice-details">
               <summary>

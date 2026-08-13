@@ -5,6 +5,7 @@ import { App } from '../../src/frontend/app';
 import { Sidebar } from '../../src/frontend/components/sidebar';
 import { RenamePracticeDialog } from '../../src/frontend/components/rename-practice-dialog';
 import { HomePage } from '../../src/frontend/pages/home-page';
+import { HistoryPage } from '../../src/frontend/pages/history-page';
 import { RecordingPage } from '../../src/frontend/pages/recording-page';
 import { LivePracticePage } from '../../src/frontend/pages/live-practice-page';
 import { PracticeRecordDetailPage } from '../../src/frontend/pages/practice-record-detail-page';
@@ -128,6 +129,36 @@ describe('Phrio P1 renderer flow', () => {
     expect(onStart).toHaveBeenCalledOnce();
   });
 
+  it('turns one visible scenario starter into a ready-to-speak free practice', () => {
+    const onStartFree = vi.fn();
+    render(
+      <HomePage
+        busy={false}
+        canResume={false}
+        onBrowseTasks={vi.fn()}
+        onResume={vi.fn()}
+        onSelectMode={vi.fn()}
+        onSelectTask={vi.fn()}
+        onStart={vi.fn()}
+        onStartFree={onStartFree}
+        selectedMode="decision-alignment"
+        selectedTask={CANONICAL_TASK}
+      />,
+    );
+
+    expect(screen.getByLabelText('场景灵感')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: '推动一次决定' }));
+    expect(screen.getByRole('textbox', { name: '自由练习题目' })).toHaveValue(
+      '说明一个现在需要做出的决定：你建议怎么选，为什么？',
+    );
+    fireEvent.click(screen.getByRole('button', { name: '直接开始' }));
+    expect(onStartFree).toHaveBeenCalledWith({
+      topic: '说明一个现在需要做出的决定：你建议怎么选，为什么？',
+      audience: '需要共同做出决定的参与者',
+      goal: '先给建议，再说明依据、取舍和下一步',
+    });
+  });
+
   it('moves from the local-first boundary into the A3 practice composer', async () => {
     const { container } = render(<App />);
 
@@ -215,6 +246,61 @@ describe('Phrio P1 renderer flow', () => {
     expect(onOpenHistory).toHaveBeenCalledWith('session-recent');
     fireEvent.click(screen.getByRole('button', { name: '全部' }));
     expect(onNavigate).toHaveBeenCalledWith('S10');
+  });
+
+  it('summarizes only factual local practice milestones without creating a score', () => {
+    render(
+      <HistoryPage
+        items={[
+          {
+            id: 'session-one',
+            title: '解释一次方案取舍',
+            modeId: 'decision-alignment',
+            modeTag: '决策与对齐',
+            modeLabel: '决策与对齐 · 产品经理',
+            pinnedAt: null,
+            updatedAt: '今天 14:32',
+            statusLabel: '已完成完整练习闭环',
+            hasAudio: true,
+            hasRetry: true,
+            hasFocus: true,
+            focusLabel: '结论先行',
+            guidanceLabel: '本地规则',
+            attemptSummary: '初讲 + 复讲',
+          },
+          {
+            id: 'session-two',
+            title: '复盘一次沟通',
+            modeId: 'clear-expression',
+            modeTag: '清晰表达',
+            modeLabel: '清晰表达 · 通用',
+            pinnedAt: null,
+            updatedAt: '昨天 09:12',
+            statusLabel: '诊断已保存',
+            hasAudio: false,
+            hasRetry: false,
+            hasFocus: false,
+            focusLabel: '尚未选择焦点',
+            guidanceLabel: '用户自选',
+            attemptSummary: '仅初讲',
+          },
+        ]}
+        loading={false}
+        onDeleteSession={vi.fn()}
+        onOpenSession={vi.fn()}
+        onRenameSession={vi.fn()}
+        onRetry={vi.fn()}
+        onSetSessionPinned={vi.fn()}
+      />,
+    );
+
+    const facts = screen.getByLabelText('本地练习轨迹');
+    expect(facts).toHaveTextContent('累计练习2条本地记录');
+    expect(facts).toHaveTextContent('完成复讲1次初讲 + 复讲');
+    expect(facts).toHaveTextContent('明确焦点1次只练一个动作');
+    expect(facts).toHaveTextContent('本地留音1条仍可回放');
+    expect(facts).toHaveTextContent('不生成分数或连续打卡压力');
+    expect(facts).not.toHaveTextContent('总分');
   });
 
   it('shows a separate mode tag and exposes real rename, pin and delete actions', () => {

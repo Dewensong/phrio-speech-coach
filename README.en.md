@@ -1,13 +1,3 @@
-<p align="center">
-  <a href="docs/assets/phrio-launch-film.mp4?raw=1">
-    <img src="docs/assets/phrio-launch-film-preview.gif" alt="Phrio launch film: inspect the words, choose one focus, and retry on the same criterion" width="840">
-  </a>
-</p>
-
-<p align="center">
-  <a href="docs/assets/phrio-launch-film.mp4?raw=1"><strong>▶ Play the 30-second film with sound (1080p)</strong></a>
-</p>
-
 <h1 align="center">Phrio</h1>
 
 <p align="center">
@@ -22,9 +12,10 @@
 
 <p align="center">
   <a href="README.md">中文</a> ·
-  <a href="#30-second-launch-film">Launch film</a> ·
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1">30-second film</a> ·
   <a href="#30-second-demo">30-second demo</a> ·
   <a href="#quick-start">Quick start</a> ·
+  <a href="#roadmap-and-contributing">Roadmap</a> ·
   <a href="CONTRIBUTING.md">Contributing</a> ·
   <a href="SECURITY.md">Security</a>
 </p>
@@ -34,9 +25,26 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml">
-    <img src="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml/badge.svg?branch=main" alt="Phrio CI">
+  <a href="https://github.com/Dewensong/phrio-speech-coach/stargazers">
+    <img src="https://img.shields.io/github/stars/Dewensong/phrio-speech-coach?style=flat-square&label=Star&color=dc654b" alt="GitHub Stars">
   </a>
+  <a href="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/Dewensong/phrio-speech-coach/ci.yml?branch=main&style=flat-square&label=macOS%20CI" alt="Phrio CI">
+  </a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-173e36?style=flat-square" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/status-Internal%20Alpha-276d63?style=flat-square" alt="Internal Alpha">
+</p>
+
+<p align="center">
+  <img src="docs/assets/phrio-social-preview.png" alt="Phrio: speak once, say it again, more clearly" width="960">
+</p>
+
+<p align="center">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1"><strong>▶ Watch the 30-second film</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#quick-start"><strong>⌘ Run from source</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Dewensong/phrio-speech-coach/stargazers"><strong>☆ Star to follow</strong></a>
 </p>
 
 > [!IMPORTANT]
@@ -46,12 +54,22 @@
 
 ## 30-second launch film
 
-The silent preview above plays inline. Click the image or the
-[play link](docs/assets/phrio-launch-film.mp4?raw=1) for the complete 1080p version
+<p align="center">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1">
+    <img src="docs/assets/phrio-launch-film-preview.gif" alt="Phrio launch film: inspect the words, choose one focus, and retry on the same criterion" width="840">
+  </a>
+</p>
+
+The silent preview above plays inline. Click it for the complete 1080p version
 with sound. The public soundtrack and action cues are synthesized by project
 scripts and do not use the internal reference mix. Product footage uses
 controlled fixtures captured from the real packaged UI; it demonstrates the
 method, not real-device or training-outcome evidence.
+
+> If an evidence-led speech coach without total scores or automatic rewriting
+> sounds worth exploring, [Star the repository](https://github.com/Dewensong/phrio-speech-coach/stargazers).
+> A Star does not unlock features; it helps signal whether public binaries and
+> more Chinese practice scenarios should be prioritized.
 
 ## Practice the sentence, not a speaking score
 
@@ -112,6 +130,9 @@ evidence of real microphone, model, or cloud-provider quality.
   separate consent boundaries.
 - Repository-owned community task packs validated at build time; no downloaded
   code or runtime plug-in execution.
+- Three one-click scenario starters on the home screen reduce blank-page friction.
+- A local practice trail reports only saved facts—sessions, retries, chosen
+  focuses, and retained audio—without scores or streak pressure.
 
 ## Privacy model
 
@@ -189,6 +210,22 @@ reviewed JSON files compiled into the app and licensed under MIT.
 Start with [`task-packs/contributions/product-review.json`](task-packs/contributions/product-review.json)
 and read the [task-pack contribution guide](task-packs/README.md).
 
+## Roadmap and contributing
+
+Priorities follow one rule: make real practice more reliable and easier to start.
+
+1. **Now:** improve the local Chinese practice loop, scenarios, accessibility,
+   and deterministic tests.
+2. **Next:** after obtaining an Apple Developer identity, create a Developer ID
+   signed and notarized candidate, then validate Gatekeeper, persistent microphone
+   permission, and performance on a non-build Mac.
+3. **Later:** publish a normal-user binary only after real-device evidence is sufficient.
+
+Good first contributions include Chinese practice prompts, task packs,
+accessibility, and documentation. Suggest product directions through a
+[feature request](https://github.com/Dewensong/phrio-speech-coach/issues/new?template=feature-request.yml).
+Do not attach real recordings, transcripts, API keys, or customer material.
+
 ## Repository map
 
 ```text
@@ -215,7 +252,10 @@ Phrio intentionally separates:
   performance, and explicitly authorized cloud calls.
 
 One category never substitutes for another. Current acceptance evidence lives
-under [`docs/acceptance`](docs/acceptance). The current-tree secret, license,
+under [`docs/acceptance`](docs/acceptance). The two user-visible improvements
+and GitHub conversion surface are documented in
+[`2026-08-13 Visible product and GitHub conversion`](docs/acceptance/2026-08-13-visible-product-and-github-conversion.md).
+The current-tree secret, license,
 workflow-permission, `main`, CI, and remote-boundary result is documented in
 [`2026-07-24 GitHub source publication`](docs/acceptance/2026-07-24-github-source-publication.md).
 The preceding local-only audit remains in

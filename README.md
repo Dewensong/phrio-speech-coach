@@ -1,13 +1,3 @@
-<p align="center">
-  <a href="docs/assets/phrio-launch-film.mp4?raw=1">
-    <img src="docs/assets/phrio-launch-film-preview.gif" alt="Phrio 产品宣传片：看见原句、只练一个焦点、按同一标准再说一遍" width="840">
-  </a>
-</p>
-
-<p align="center">
-  <a href="docs/assets/phrio-launch-film.mp4?raw=1"><strong>▶ 播放 30 秒有声宣传片（1080p）</strong></a>
-</p>
-
 <h1 align="center">Phrio</h1>
 
 <p align="center">
@@ -21,9 +11,10 @@
 
 <p align="center">
   <a href="README.en.md">English</a> ·
-  <a href="#30-秒产品宣传片">宣传片</a> ·
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1">30 秒宣传片</a> ·
   <a href="#30-秒受控演示">30 秒演示</a> ·
   <a href="#快速开始">快速开始</a> ·
+  <a href="#路线图与参与">路线图</a> ·
   <a href="CONTRIBUTING.md">参与贡献</a> ·
   <a href="SECURITY.md">安全说明</a>
 </p>
@@ -33,9 +24,26 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml">
-    <img src="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml/badge.svg?branch=main" alt="Phrio CI">
+  <a href="https://github.com/Dewensong/phrio-speech-coach/stargazers">
+    <img src="https://img.shields.io/github/stars/Dewensong/phrio-speech-coach?style=flat-square&label=Star&color=dc654b" alt="GitHub Stars">
   </a>
+  <a href="https://github.com/Dewensong/phrio-speech-coach/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/Dewensong/phrio-speech-coach/ci.yml?branch=main&style=flat-square&label=macOS%20CI" alt="Phrio CI">
+  </a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-173e36?style=flat-square" alt="MIT License"></a>
+  <img src="https://img.shields.io/badge/status-Internal%20Alpha-276d63?style=flat-square" alt="Internal Alpha">
+</p>
+
+<p align="center">
+  <img src="docs/assets/phrio-social-preview.png" alt="Phrio：说一遍，再说一遍，会更清楚" width="960">
+</p>
+
+<p align="center">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1"><strong>▶ 看 30 秒有声宣传片</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#快速开始"><strong>⌘ 从源码运行</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/Dewensong/phrio-speech-coach/stargazers"><strong>☆ Star 关注进展</strong></a>
 </p>
 
 > [!IMPORTANT]
@@ -44,10 +52,19 @@
 
 ## 30 秒产品宣传片
 
-上方静音预览会直接播放；点击画面或
-[播放链接](docs/assets/phrio-launch-film.mp4?raw=1)可观看 1080p 有声完整版本。
+<p align="center">
+  <a href="docs/assets/phrio-launch-film.mp4?raw=1">
+    <img src="docs/assets/phrio-launch-film-preview.gif" alt="Phrio 产品宣传片：看见原句、只练一个焦点、按同一标准再说一遍" width="840">
+  </a>
+</p>
+
+上方静音预览会直接播放；点击画面可观看 1080p 有声完整版本。
 公开版音乐与动作音效均由项目脚本程序合成，不使用内部参考混音。片中产品画面来自
 真实打包 UI 的受控 Fixture，展示产品方法，不冒充真实设备或训练效果证据。
+
+> 如果你也希望看到一种“不打总分、不替你改写、把判断指回原句”的表达训练方式，
+> 可以给仓库一个 [Star](https://github.com/Dewensong/phrio-speech-coach/stargazers)。
+> 它不会解锁功能，但会帮助我判断是否值得优先投入公共安装包和更多中文练习场景。
 
 ## 练的是这句话，不是表达总分
 
@@ -102,6 +119,9 @@ Key，并针对具体用途完成独立同意后，才允许发送相应的 fina
   以及 1024 px 紧凑布局。
 - 可选 OpenAI 实时提示、深度诊断和语义比较；三种用途保持独立同意边界。
 - 仓库内社区 Task Pack 在构建期校验，不下载或执行远程插件代码。
+- 首页提供三类一键“场景灵感”，减少面对空白题目时的启动阻力。
+- 练习记录展示仅保存在本机的事实轨迹：累计练习、完成复讲、明确焦点与留存录音；
+  不生成分数，也不制造连续打卡压力。
 
 需要查看完整状态、Fast / Deep Lane、诊断日志和降级边界时，请阅读
 [中文 Internal Alpha 技术说明](docs/internal-alpha.zh-CN.md)。
@@ -176,6 +196,19 @@ Pack 是经过 Review 的 JSON，在构建期编译进应用，并采用 MIT 许
 [`task-packs/contributions/product-review.json`](task-packs/contributions/product-review.json)
 开始，并阅读 [Task Pack 贡献指南](task-packs/README.md)。
 
+## 路线图与参与
+
+当前优先级按“能否让真实练习更可靠、更容易开始”排序：
+
+1. **现在**：继续打磨本地中文表达闭环、场景题库、无障碍和确定性测试。
+2. **下一步**：在获得 Apple Developer 身份后生成 Developer ID 签名、公证候选，
+   再完成非构建 Mac 的 Gatekeeper、麦克风授权连续性与性能验收。
+3. **之后**：只有真实设备证据充分时，才建立普通用户可下载的公共安装包。
+
+适合第一次贡献的方向是中文练习题、Task Pack、可访问性和文档。产品方向建议可通过
+[Feature request](https://github.com/Dewensong/phrio-speech-coach/issues/new?template=feature-request.yml)
+提出；请勿在 Issue 中上传真实录音、逐字稿、API Key 或客户材料。
+
 ## 仓库结构
 
 ```text
@@ -200,7 +233,9 @@ Phrio 始终区分：
 - **真实设备证据**：真实麦克风、本地模型、设备中断、性能以及明确授权的云端调用。
 
 三类证据不能相互替代。当前证据位于
-[`docs/acceptance`](docs/acceptance)。源码历史隐私、许可证、workflow 权限、
+[`docs/acceptance`](docs/acceptance)。本轮两个用户可见增量和 GitHub 转化面见
+[2026-08-13 验收](docs/acceptance/2026-08-13-visible-product-and-github-conversion.md)；
+源码历史隐私、许可证、workflow 权限、
 远端 CI 与 clean-clone 结果见
 [2026-07-24 GitHub 源码公开验收](docs/acceptance/2026-07-24-github-source-publication.md)；
 完整主题、缩放、键盘、受控 Fixture 和真实设备边界见
