@@ -294,6 +294,8 @@ export async function listPracticeHistory(): Promise<HistoryItemView[]> {
             : session.guidanceSource === 'self_directed'
               ? '用户自选'
               : '待确认',
+      hasRetry: session.attempts.length === 2,
+      hasFocus: session.focus !== null,
       attemptSummary: session.attempts.length === 2
         ? '初讲 + 复讲'
         : session.attempts.length === 1

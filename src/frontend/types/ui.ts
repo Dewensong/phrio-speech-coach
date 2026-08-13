@@ -96,4 +96,6 @@ export interface HistoryItemView {
   focusLabel: string;
   guidanceLabel: string;
   attemptSummary: string;
+  hasRetry?: boolean;
+  hasFocus?: boolean;
 }

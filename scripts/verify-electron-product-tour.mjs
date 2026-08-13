@@ -620,6 +620,18 @@ async function runProductTour() {
       'free-practice entry is visible and actionable',
       await page.getByRole('button', { name: '直接开始' }).isEnabled(),
     );
+    const practiceStarters = page.getByLabel('场景灵感');
+    recordAssertion(
+      'free-practice entry offers three one-click real-scenario starters',
+      await practiceStarters.getByRole('button').count() === 3,
+    );
+    await practiceStarters.getByRole('button', { name: '推动一次决定', exact: true }).click();
+    recordAssertion(
+      'scenario starter prepares a concrete topic without creating a Session',
+      await page.getByRole('textbox', { name: '自由练习题目' }).inputValue()
+        === '说明一个现在需要做出的决定：你建议怎么选，为什么？'
+        && (await page.evaluate(() => window.phrio.listSessions({}))).length === sessionsAfterDemo.length,
+    );
     await captureScreenshot(page, 'product-02-home-free-practice-1440x960', 'product', 'S01 with free practice, mode switch and recommendations');
     await setViewport(page, 1_024, 960);
     const compactHome = await page.evaluate(() => ({
@@ -1018,6 +1030,13 @@ async function runProductTour() {
       await page.locator('.history-folio').filter({ hasText: 'LOCAL ARCHIVE' }).isVisible()
         && await page.locator('.history-row-number').count() === 1
         && await page.locator('.history-table .practice-record-actions-trigger').isVisible(),
+    );
+    recordAssertion(
+      'full history shows a factual local practice trail without a score',
+      await page.getByRole('region', { name: '本地练习轨迹' }).isVisible()
+        && await page.locator('.practice-facts').getByText('累计练习', { exact: true }).isVisible()
+        && await page.locator('.practice-facts').getByText('1', { exact: true }).first().isVisible()
+        && await page.locator('.practice-facts').getByText(/不生成分数或连续打卡压力/u).isVisible(),
     );
     const historySidebarState = await sidebarActiveState(page);
     const historyActiveItems = historySidebarState.items.filter((item) => item.active || item.ariaCurrent !== null);
@@ -1684,6 +1703,12 @@ async function runQaTour() {
     await locateFrozenEvidence.focus();
     await locateFrozenEvidence.press('Enter');
     await page.getByRole('heading', { name: '原句与问题逐句对齐' }).waitFor();
+    await page.waitForFunction(() => {
+      const focused = document.activeElement;
+      const activeRecord = document.querySelector('.frozen-evidence-ledger .evidence-record.is-active');
+      return focused?.classList.contains('evidence-record') === true
+        && focused.getAttribute('data-evidence-id') === activeRecord?.getAttribute('data-evidence-id');
+    });
     const evidenceLocationFocus = await page.evaluate(() => {
       const focused = document.activeElement;
       const activeRecord = document.querySelector('.frozen-evidence-ledger .evidence-record.is-active');

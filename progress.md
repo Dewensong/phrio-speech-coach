@@ -1,5 +1,33 @@
 # 推进记录
 
+## 2026-08-13
+
+- 进入公开产品仓前确认当前公开仓的受保护 `main`、`origin/main` 与本地基线均为
+  `a5b9ac4`，工作区干净；本轮从该点建立
+  `codex/user-visible-momentum`，不使用已移除的旧 Worktree 或内部历史作为实现源。
+- Dewens 确认尚未加入 Apple Developer Program。因此本轮只推进源码产品和
+  GitHub 传播面，不生成、不上传、不暗示已有 Developer ID 签名或 Apple 公证的
+  公共安装包。
+- GitHub 点验时仓库为 0 Star / 0 Fork、近 14 天 0 View，同时已有 25 Clone /
+  13 Unique Cloner，Community Profile 为 100%。据此把问题判断为“已有少量拉取，
+  但发现和首屏转化不足”，而不是继续扩张基础设施或无目的重构。
+- 完成两个用户可见改进：首页新增“解释复杂概念 / 推动一次决定 / 复盘一次失误”
+  三个场景灵感，一次点击只预填题目、听众与目标，不提前创建 Session；练习记录
+  新增累计练习、完成复讲、明确焦点和本地留音四项事实轨迹，不生成总分、排名或
+  连续打卡压力。
+- 中英 GitHub 首页同步改为轻量静态主视觉优先，增加 Star / CI / MIT / Internal
+  Alpha 徽章、宣传片 / 源码运行 / Star 三个首屏动作、诚实 Star 说明和
+  Now / Next / Later 路线图；公共二进制、真实设备和 OpenAI 同意边界没有放宽。
+- 新增定向 UI 回归与真实打包产品巡检断言。巡检真实发现键盘焦点断言早于下一帧
+  取证，改为等待焦点确实落到同一 O 记录后再读取，未放宽断言或修改产品行为。
+- 最终 `pnpm verify` 通过：开源门检查 269 个跟踪文件，59 个测试文件 / 598 项
+  通过（另 1 文件 / 1 项显式跳过），Electron 系统网络与防休眠探针、macOS
+  arm64 package、18 个签名目标、40 方法 packaged bridge 与 Sherpa `1.13.4`
+  smoke 全部通过。Electron visual 为 85/85（9 图），完整 product tour 为
+  152/152（49 图、13 个产品步骤、6 个 QA 步骤），失败 0。
+- 本轮自动化和受控 Fixture 使用隔离数据，未请求真实麦克风、未安装或评价本地
+  模型、未提供 OpenAI Key、未发送转录文本，也没有新增目标 Mac 或公证证据。
+
 ## 2026-08-02
 
 - 复核宣传片发布后的远程真值：PR #10 已在 `verify-macos-arm64` 通过后 squash

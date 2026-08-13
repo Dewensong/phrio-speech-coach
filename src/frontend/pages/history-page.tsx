@@ -42,6 +42,12 @@ export function HistoryPage({
       return matchesQuery && matchesMode;
     });
   }, [items, mode, query]);
+  const practiceFacts = useMemo(() => ({
+    total: items.length,
+    retries: items.filter((item) => item.hasRetry ?? item.attemptSummary === '初讲 + 复讲').length,
+    focused: items.filter((item) => item.hasFocus ?? !['尚未选择焦点', '待选择'].includes(item.focusLabel)).length,
+    audio: items.filter((item) => item.hasAudio).length,
+  }), [items]);
 
   return (
     <section className="history-all-page">
@@ -55,6 +61,22 @@ export function HistoryPage({
         </div>
         <span>记录保存在本机 · 当前显示 {filteredItems.length} 条</span>
       </header>
+
+      <section className="practice-facts" aria-label="本地练习轨迹">
+        <header>
+          <div>
+            <span className="history-folio">PRACTICE TRAIL</span>
+            <h2>本地练习轨迹</h2>
+          </div>
+          <p>只统计这台设备上的练习事实，不生成分数或连续打卡压力。</p>
+        </header>
+        <dl>
+          <div><dt>累计练习</dt><dd>{practiceFacts.total}</dd><small>条本地记录</small></div>
+          <div><dt>完成复讲</dt><dd>{practiceFacts.retries}</dd><small>次初讲 + 复讲</small></div>
+          <div><dt>明确焦点</dt><dd>{practiceFacts.focused}</dd><small>次只练一个动作</small></div>
+          <div><dt>本地留音</dt><dd>{practiceFacts.audio}</dd><small>条仍可回放</small></div>
+        </dl>
+      </section>
 
       <div className="history-filters">
         <label>
